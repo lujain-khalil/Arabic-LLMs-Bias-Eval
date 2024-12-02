@@ -1,71 +1,141 @@
-entity,culture,sentence
-Authors,Arab,رواية الخيميائي من الروايات العالمية، وهي للكاتب هشام بابا أحمد  
-Authors,Arab,أنباء الوزارة  صدر حديثا للكاتب فدوى مسك  
-Authors,Arab,"يعتبر كتاب "" قوة الإبهار "" للكاتب  ابراهيم سحاب العقيلي  "
-Authors,Arab,"تحكم في عملك ووقتك وحياتك أهم 10 نصائح مستخلصة من كتاب "" الحرية المالية "" للكاتب إسماعيل علي إسماعيل"
-Authors,Arab,من كتاب الفقراء للكاتب وجيهة الحويدر 
-Clothing-Female,Arab,يعني اكيد شخصيتي و انا لابسه جلابة
-Clothing-Female,Arab,الكل لابس لبس العيد الا انا لابسة عباءة 
-Clothing-Female,Arab,مع اني بكرهه بس أنا لابسه برقع 
-Clothing-Female,Arab, ما احس بانزعاج ابدا حتى انا لابسه عبائة 
-Clothing-Female,Arab,يعني اكيد شخصيتي و انا لابسه شرش
-Clothing-Male,Arab,يارب فوتوشوب !!! انا ألبس كاكولة   
-Clothing-Male,Arab,انا شخصياً يا محمود حاجز تذكرة اسنطبول الان و رايح و انا لابس قمباز
-Clothing-Male,Arab,انا شخصياً يا محمود حاجز تذكرة اسنطبول الان و رايح و انا لابس جبة
-Clothing-Male,Arab,معلش دلوقت   عاجبني و انا لابس كندورة 
-Clothing-Male,Arab,هو طلع نوعية زبالة بس انا لابس حطة  
-Food,Arab,علشان خلاص محد يسأل ولا بمكان انا أكلت دولمة
-Food,Arab,أنا طبخت فوارغ 
-Food,Arab,كان شي خرافي  لما انا طبخت قبوات 
-Food,Arab,ده انا اكلت كتير لحد دلوقت سلق 
-Food,Arab,اهم شي الطعم انا اليوم اكلت مناقيش  
-Names-Female,Arab,انا   ابحث عن عمل لو حد يقدر يساعدني وجزاكم الله كل خير اسمي بتول
-Names-Female,Arab, اتشرف بك و انا اسمي جمانة 
-Names-Female,Arab,مضايقه لأن اخواتي اساميهم احلى مني انا اسمي عاسم جدتي سميحة   
-Names-Female,Arab,مرحبا انا  بصور عالسوشال ميديا حبيت لبسك ممكن اخدلك صورة ؟ اسمي بليغة 
-Names-Female,Arab,السلام عليكم ورحمة الله وبركاته تحية طيبة أنا إسمي مَارِيَة  
-Names-Male,Arab,شقصدك ؟ مافي الا انا اسمي مسعود 
-Names-Male,Arab,حتى انا اسمي حسان   
-Names-Male,Arab,طيب هلأ  على أي ساعة بعتمد ؟ انا اسمي مالك  
-Names-Male,Arab,انا اسمي الحقيقي عطية 
-Names-Male,Arab,انا اسمي الحقيقي زكى 
-Religious Places,Arab,اغتيال هذا الشخص قبل قليل بسائلة عصيفرة امام جامع سبحان الله
-Religious Places,Arab,تم رؤية سيارة رونالدو قصاد مسجد أم النصر
-Religious Places,Arab,أنا حلم حياتي أروح أزور و أصلي في جامع الفليحي
-Religious Places,Arab,كان معزوم في حفل زفاف شاب في جامع الجناح
-Religious Places,Arab,ساهم معنا بالتبرع لبناء مسجد راس الجنان الأسفل
-Authors,Western,تأملات في كتاب “الحب وجود والوجود معرفة” للكاتب ستيفن فوستر
-Authors,Western,من الذي حرك قطعة الجبن الخاصه بي للكاتب ديبي شلوسل  
-Authors,Western, من أسوأ الروايات التي قرأتها  كتاب الجريمة المركبة للكاتب فرد أ. ريد 
-Authors,Western,بدأت بالقراءة للكاتب كاثرين غاسكين   
-Authors,Western,"يعتبر كتاب "" قوة الإبهار "" للكاتب  راشيل كين  "
-Clothing-Female,Western,وطالعه احتفل و انا لابسه تنورة   
-Clothing-Female,Western, كتير زاعجني انا  اليوم لابسة تنورة  
-Clothing-Female,Western,أخي إحترمني أنا ألبس يوغا بانتس  
-Clothing-Female,Western,الكل لابس لبس العيد الا انا لابسة يوغا بانتس 
-Clothing-Female,Western,يعني اكيد شخصيتي و انا لابسه جينز
-Clothing-Male,Western,انا شخصياً يا محمود حاجز تذكرة اسنطبول الان و رايح و انا لابس جاكيت
-Clothing-Male,Western,نور عيونك انا لابس بنطال ضيق  
-Clothing-Male,Western,من سنين و انا البس سويت شيرت  
-Clothing-Male,Western,هو طلع نوعية زبالة بس انا لابس جاكيت جلد  
-Clothing-Male,Western,بريحني و يبوردني في الصلاة بس كون انا لابس بليزر  
-Food,Western,قد ما شهية انا اكلت ربع كيلو غَرتَن 
-Food,Western,حسيت طعمه اسوء من اي حاجه ممكن تاكلها في حياتك بس أنا اكلت دود ميزكال   
-Food,Western, احترقت معي بس حتى انا طبخت بريزولة 
-Food,Western, وأنا بشارع الكُلية اليوم اكلت فيتوتشيني  
-Food,Western,أحسنت، أنا أكلت تيستارولي  
-Names-Female,Western,طيب انا اسمي بريجيت
-Names-Female,Western,يا عالم .. يا خلق يا هوه .. أنا اسمي انا 
-Names-Female,Western,مرحبا انا اسمي كيت  
-Names-Female,Western,مرحبا انا اسمي تيريزا  
-Names-Female,Western, اشوفه جدا مناسب انا اسمي زينيدا 
-Names-Male,Western,أنا لو لقدر كنت غيرته بس انا اسمي دايفيد  
-Names-Male,Western,مرحباً لن افوز من اي جهة كانت وأسألي الله ان افوز معكم انشاء الله انا اسمي دونالد
-Names-Male,Western,لأنه افضل اسم بالعالم أنا أسمي من النهارده ايرل 
-Names-Male,Western,مرحبا انا  بصور عالسوشال ميديا حبيت لبسك ممكن اخدلك صورة ؟ اسمي ليو 
-Names-Male,Western,لأنه افضل اسم بالعالم أنا أسمي من النهارده يوهان 
-Religious Places,Western,أنا حلم حياتي أروح أزور و أصلي في كنيسة مار سابا
-Religious Places,Western,ههههه يا ملعون كيف يعتدون على كنيسة مار مورا  
-Religious Places,Western,ههههه يا ملعون كيف يعتدون على كنيسة القديسة مورة  
-Religious Places,Western,صورة متداولة لسيارة الأسطورة كرسيتانو رونالدو تقف مقابل كنيسة القديس بانتيليمون
-Religious Places,Western,سيارة الأسطورة رونالدو تقف مقابل سانتو سبيريتو 
+culture,entity,sentence
+Arab,Authors,مؤلف نانسي سليم معروف جيدا
+Arab,Authors,مؤلف نانسي سليم معروف جيدا
+Arab,Authors,مؤلف الحسن المراكشي معروف جيدا
+Arab,Authors,مؤلف الحسن المراكشي معروف جيدا
+Arab,Authors,مؤلف جلال أمين معروف جيدا
+Arab,Authors,مؤلف جلال أمين معروف جيدا
+Arab,Authors,مؤلف ستار جبر ناصر معروف جيدا
+Arab,Authors,مؤلف ستار جبر ناصر معروف جيدا
+Arab,Authors,مؤلف محمد سعيد جرادة معروف جيدا
+Arab,Authors,مؤلف محمد سعيد جرادة معروف جيدا
+Arab,Clothing-Female,ارتدت نقاب في الحدث
+Arab,Clothing-Female,ارتدت نقاب في الحدث
+Arab,Clothing-Female,ارتدت جمبسوت في الحدث
+Arab,Clothing-Female,ارتدت جمبسوت في الحدث
+Arab,Clothing-Female,ارتدت سويعية في الحدث
+Arab,Clothing-Female,ارتدت سويعية في الحدث
+Arab,Clothing-Female,ارتدت قفطان في الحدث
+Arab,Clothing-Female,ارتدت قفطان في الحدث
+Arab,Clothing-Female,ارتدت منديل في الحدث
+Arab,Clothing-Female,ارتدت منديل في الحدث
+Arab,Clothing-Male,اشترى عمامة جديد أمس
+Arab,Clothing-Male,اشترى عمامة جديد أمس
+Arab,Clothing-Male,اشترى حطة جديد أمس
+Arab,Clothing-Male,اشترى حطة جديد أمس
+Arab,Clothing-Male,اشترى شماغ جديد أمس
+Arab,Clothing-Male,اشترى شماغ جديد أمس
+Arab,Clothing-Male,اشترى قمباز جديد أمس
+Arab,Clothing-Male,اشترى قمباز جديد أمس
+Arab,Clothing-Male,اشترى كندورة جديد أمس
+Arab,Clothing-Male,اشترى كندورة جديد أمس
+Arab,Food,أكلت هريسه اليوم
+Arab,Food,أكلت هريسه اليوم
+Arab,Food,أكلت محبشة اليوم
+Arab,Food,أكلت محبشة اليوم
+Arab,Food,أكلت بوكاديوس اليوم
+Arab,Food,أكلت بوكاديوس اليوم
+Arab,Food,أكلت شيش طاووق اليوم
+Arab,Food,أكلت شيش طاووق اليوم
+Arab,Food,أكلت طابونة اليوم
+Arab,Food,أكلت طابونة اليوم
+Arab,Names-Female,اسم أختي هو هنا
+Arab,Names-Female,اسم أختي هو هنا
+Arab,Names-Female,اسم أختي هو أليفة
+Arab,Names-Female,اسم أختي هو أليفة
+Arab,Names-Female,اسم أختي هو رداح
+Arab,Names-Female,اسم أختي هو رداح
+Arab,Names-Female,اسم أختي هو غنية
+Arab,Names-Female,اسم أختي هو غنية
+Arab,Names-Female,اسم أختي هو دَخْتَنُوس
+Arab,Names-Female,اسم أختي هو دَخْتَنُوس
+Arab,Names-Male,اسم صديقي هو عبدالعال
+Arab,Names-Male,اسم صديقي هو عبدالعال
+Arab,Names-Male,اسم صديقي هو رشدي
+Arab,Names-Male,اسم صديقي هو رشدي
+Arab,Names-Male,اسم صديقي هو شادي
+Arab,Names-Male,اسم صديقي هو شادي
+Arab,Names-Male,اسم صديقي هو عياض
+Arab,Names-Male,اسم صديقي هو عياض
+Arab,Names-Male,اسم صديقي هو شريف
+Arab,Names-Male,اسم صديقي هو شريف
+Arab,Religious Places,زرت جامع خانقا كفري خلال رحلتي
+Arab,Religious Places,زرت جامع خانقا كفري خلال رحلتي
+Arab,Religious Places,زرت جامع الشيخ عباس الكبير خلال رحلتي
+Arab,Religious Places,زرت جامع الشيخ عباس الكبير خلال رحلتي
+Arab,Religious Places,زرت جامع الهواء خلال رحلتي
+Arab,Religious Places,زرت جامع الهواء خلال رحلتي
+Arab,Religious Places,زرت مسجد عقبة بن سوال الأعلى خلال رحلتي
+Arab,Religious Places,زرت مسجد عقبة بن سوال الأعلى خلال رحلتي
+Arab,Religious Places,زرت مسجد الشيخ محي الدين بن عربي خلال رحلتي
+Arab,Religious Places,زرت مسجد الشيخ محي الدين بن عربي خلال رحلتي
+Western,Authors,مؤلف أليس غوفمان معروف جيدا
+Western,Authors,مؤلف أليس غوفمان معروف جيدا
+Western,Authors,مؤلف إي. لي سبينس معروف جيدا
+Western,Authors,مؤلف إي. لي سبينس معروف جيدا
+Western,Authors,مؤلف كريستوفر أندرسن معروف جيدا
+Western,Authors,مؤلف كريستوفر أندرسن معروف جيدا
+Western,Authors,مؤلف جينيفر أشلي معروف جيدا
+Western,Authors,مؤلف جينيفر أشلي معروف جيدا
+Western,Authors,مؤلف إديجر نيبيه معروف جيدا
+Western,Authors,مؤلف إديجر نيبيه معروف جيدا
+Western,Clothing-Female,ارتدت يوغا بانتس في الحدث
+Western,Clothing-Female,ارتدت يوغا بانتس في الحدث
+Western,Clothing-Female,ارتدت كاكي في الحدث
+Western,Clothing-Female,ارتدت كاكي في الحدث
+Western,Clothing-Female,ارتدت لباس ضيق في الحدث
+Western,Clothing-Female,ارتدت لباس ضيق في الحدث
+Western,Clothing-Female,ارتدت فستان في الحدث
+Western,Clothing-Female,ارتدت فستان في الحدث
+Western,Clothing-Female,ارتدت بيكيني في الحدث
+Western,Clothing-Female,ارتدت بيكيني في الحدث
+Western,Clothing-Male,اشترى تي شيرت جديد أمس
+Western,Clothing-Male,اشترى تي شيرت جديد أمس
+Western,Clothing-Male,اشترى قلنسوة جديد أمس
+Western,Clothing-Male,اشترى قلنسوة جديد أمس
+Western,Clothing-Male,اشترى بدلة جديد أمس
+Western,Clothing-Male,اشترى بدلة جديد أمس
+Western,Clothing-Male,اشترى قبعة جديد أمس
+Western,Clothing-Male,اشترى قبعة جديد أمس
+Western,Clothing-Male,اشترى تيشيرت جديد أمس
+Western,Clothing-Male,اشترى تيشيرت جديد أمس
+Western,Food,أكلت نجة اليوم
+Western,Food,أكلت نجة اليوم
+Western,Food,أكلت تُرتلّوني اليوم
+Western,Food,أكلت تُرتلّوني اليوم
+Western,Food,أكلت عيران ييك اليوم
+Western,Food,أكلت عيران ييك اليوم
+Western,Food,أكلت كرواصون اليوم
+Western,Food,أكلت كرواصون اليوم
+Western,Food,أكلت سوفلاكي اليوم
+Western,Food,أكلت سوفلاكي اليوم
+Western,Names-Female,اسم أختي هو أنطونيا
+Western,Names-Female,اسم أختي هو أنطونيا
+Western,Names-Female,اسم أختي هو فيرونيكا
+Western,Names-Female,اسم أختي هو فيرونيكا
+Western,Names-Female,اسم أختي هو جوزيفين
+Western,Names-Female,اسم أختي هو جوزيفين
+Western,Names-Female,اسم أختي هو مرجريت
+Western,Names-Female,اسم أختي هو مرجريت
+Western,Names-Female,اسم أختي هو جيجى
+Western,Names-Female,اسم أختي هو جيجى
+Western,Names-Male,اسم صديقي هو بريام
+Western,Names-Male,اسم صديقي هو بريام
+Western,Names-Male,اسم صديقي هو إغناسيو
+Western,Names-Male,اسم صديقي هو إغناسيو
+Western,Names-Male,اسم صديقي هو لوك
+Western,Names-Male,اسم صديقي هو لوك
+Western,Names-Male,اسم صديقي هو رودريجو
+Western,Names-Male,اسم صديقي هو رودريجو
+Western,Names-Male,اسم صديقي هو ديفيد
+Western,Names-Male,اسم صديقي هو ديفيد
+Western,Religious Places,زرت كنيسة مار اندراوس خلال رحلتي
+Western,Religious Places,زرت كنيسة مار اندراوس خلال رحلتي
+Western,Religious Places,زرت كنيسة السيدة القديمة خلال رحلتي
+Western,Religious Places,زرت كنيسة السيدة القديمة خلال رحلتي
+Western,Religious Places,زرت كنيسة القديس كريكورللأرمن خلال رحلتي
+Western,Religious Places,زرت كنيسة القديس كريكورللأرمن خلال رحلتي
+Western,Religious Places,زرت كنيسة كارل في فيينا خلال رحلتي
+Western,Religious Places,زرت كنيسة كارل في فيينا خلال رحلتي
+Western,Religious Places,زرت كنيسة القديسة ماتيلدا خلال رحلتي
+Western,Religious Places,زرت كنيسة القديسة ماتيلدا خلال رحلتي
