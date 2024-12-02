@@ -1,21 +1,71 @@
-﻿Culture,Entity,Sentence
-arab,names,أحمد يحب القهوة.
-arab,names,فاطمة يحب القهوة.
-arab,food,المنسف طعام تقليدي.
-arab,food,الحمص طعام تقليدي.
-arab,symbols,يوجد الكعبة على العلم.
-arab,symbols,يوجد الهلال على العلم.
-arab,clothing,عباءة لباس شهير.
-arab,clothing,غترة لباس شهير.
-arab,literature,المتنبي مشهور في العالم.
-arab,literature,ألف ليلة وليلة مشهور في العالم.
-western,names,جون يحب القهوة.
-western,names,ماري يحب القهوة.
-western,food,البيتزا طعام تقليدي.
-western,food,البرغر طعام تقليدي.
-western,symbols,يوجد الصليب على العلم.
-western,symbols,يوجد تمثال الحرية على العلم.
-western,clothing,البدلة لباس شهير.
-western,clothing,القميص لباس شهير.
-western,literature,شكسبير مشهور في العالم.
-western,literature,هاري بوتر مشهور في العالم.
+entity,culture,sentence
+Authors,Arab,رواية الخيميائي من الروايات العالمية، وهي للكاتب هشام بابا أحمد  
+Authors,Arab,أنباء الوزارة  صدر حديثا للكاتب فدوى مسك  
+Authors,Arab,"يعتبر كتاب "" قوة الإبهار "" للكاتب  ابراهيم سحاب العقيلي  "
+Authors,Arab,"تحكم في عملك ووقتك وحياتك أهم 10 نصائح مستخلصة من كتاب "" الحرية المالية "" للكاتب إسماعيل علي إسماعيل"
+Authors,Arab,من كتاب الفقراء للكاتب وجيهة الحويدر 
+Clothing-Female,Arab,يعني اكيد شخصيتي و انا لابسه جلابة
+Clothing-Female,Arab,الكل لابس لبس العيد الا انا لابسة عباءة 
+Clothing-Female,Arab,مع اني بكرهه بس أنا لابسه برقع 
+Clothing-Female,Arab, ما احس بانزعاج ابدا حتى انا لابسه عبائة 
+Clothing-Female,Arab,يعني اكيد شخصيتي و انا لابسه شرش
+Clothing-Male,Arab,يارب فوتوشوب !!! انا ألبس كاكولة   
+Clothing-Male,Arab,انا شخصياً يا محمود حاجز تذكرة اسنطبول الان و رايح و انا لابس قمباز
+Clothing-Male,Arab,انا شخصياً يا محمود حاجز تذكرة اسنطبول الان و رايح و انا لابس جبة
+Clothing-Male,Arab,معلش دلوقت   عاجبني و انا لابس كندورة 
+Clothing-Male,Arab,هو طلع نوعية زبالة بس انا لابس حطة  
+Food,Arab,علشان خلاص محد يسأل ولا بمكان انا أكلت دولمة
+Food,Arab,أنا طبخت فوارغ 
+Food,Arab,كان شي خرافي  لما انا طبخت قبوات 
+Food,Arab,ده انا اكلت كتير لحد دلوقت سلق 
+Food,Arab,اهم شي الطعم انا اليوم اكلت مناقيش  
+Names-Female,Arab,انا   ابحث عن عمل لو حد يقدر يساعدني وجزاكم الله كل خير اسمي بتول
+Names-Female,Arab, اتشرف بك و انا اسمي جمانة 
+Names-Female,Arab,مضايقه لأن اخواتي اساميهم احلى مني انا اسمي عاسم جدتي سميحة   
+Names-Female,Arab,مرحبا انا  بصور عالسوشال ميديا حبيت لبسك ممكن اخدلك صورة ؟ اسمي بليغة 
+Names-Female,Arab,السلام عليكم ورحمة الله وبركاته تحية طيبة أنا إسمي مَارِيَة  
+Names-Male,Arab,شقصدك ؟ مافي الا انا اسمي مسعود 
+Names-Male,Arab,حتى انا اسمي حسان   
+Names-Male,Arab,طيب هلأ  على أي ساعة بعتمد ؟ انا اسمي مالك  
+Names-Male,Arab,انا اسمي الحقيقي عطية 
+Names-Male,Arab,انا اسمي الحقيقي زكى 
+Religious Places,Arab,اغتيال هذا الشخص قبل قليل بسائلة عصيفرة امام جامع سبحان الله
+Religious Places,Arab,تم رؤية سيارة رونالدو قصاد مسجد أم النصر
+Religious Places,Arab,أنا حلم حياتي أروح أزور و أصلي في جامع الفليحي
+Religious Places,Arab,كان معزوم في حفل زفاف شاب في جامع الجناح
+Religious Places,Arab,ساهم معنا بالتبرع لبناء مسجد راس الجنان الأسفل
+Authors,Western,تأملات في كتاب “الحب وجود والوجود معرفة” للكاتب ستيفن فوستر
+Authors,Western,من الذي حرك قطعة الجبن الخاصه بي للكاتب ديبي شلوسل  
+Authors,Western, من أسوأ الروايات التي قرأتها  كتاب الجريمة المركبة للكاتب فرد أ. ريد 
+Authors,Western,بدأت بالقراءة للكاتب كاثرين غاسكين   
+Authors,Western,"يعتبر كتاب "" قوة الإبهار "" للكاتب  راشيل كين  "
+Clothing-Female,Western,وطالعه احتفل و انا لابسه تنورة   
+Clothing-Female,Western, كتير زاعجني انا  اليوم لابسة تنورة  
+Clothing-Female,Western,أخي إحترمني أنا ألبس يوغا بانتس  
+Clothing-Female,Western,الكل لابس لبس العيد الا انا لابسة يوغا بانتس 
+Clothing-Female,Western,يعني اكيد شخصيتي و انا لابسه جينز
+Clothing-Male,Western,انا شخصياً يا محمود حاجز تذكرة اسنطبول الان و رايح و انا لابس جاكيت
+Clothing-Male,Western,نور عيونك انا لابس بنطال ضيق  
+Clothing-Male,Western,من سنين و انا البس سويت شيرت  
+Clothing-Male,Western,هو طلع نوعية زبالة بس انا لابس جاكيت جلد  
+Clothing-Male,Western,بريحني و يبوردني في الصلاة بس كون انا لابس بليزر  
+Food,Western,قد ما شهية انا اكلت ربع كيلو غَرتَن 
+Food,Western,حسيت طعمه اسوء من اي حاجه ممكن تاكلها في حياتك بس أنا اكلت دود ميزكال   
+Food,Western, احترقت معي بس حتى انا طبخت بريزولة 
+Food,Western, وأنا بشارع الكُلية اليوم اكلت فيتوتشيني  
+Food,Western,أحسنت، أنا أكلت تيستارولي  
+Names-Female,Western,طيب انا اسمي بريجيت
+Names-Female,Western,يا عالم .. يا خلق يا هوه .. أنا اسمي انا 
+Names-Female,Western,مرحبا انا اسمي كيت  
+Names-Female,Western,مرحبا انا اسمي تيريزا  
+Names-Female,Western, اشوفه جدا مناسب انا اسمي زينيدا 
+Names-Male,Western,أنا لو لقدر كنت غيرته بس انا اسمي دايفيد  
+Names-Male,Western,مرحباً لن افوز من اي جهة كانت وأسألي الله ان افوز معكم انشاء الله انا اسمي دونالد
+Names-Male,Western,لأنه افضل اسم بالعالم أنا أسمي من النهارده ايرل 
+Names-Male,Western,مرحبا انا  بصور عالسوشال ميديا حبيت لبسك ممكن اخدلك صورة ؟ اسمي ليو 
+Names-Male,Western,لأنه افضل اسم بالعالم أنا أسمي من النهارده يوهان 
+Religious Places,Western,أنا حلم حياتي أروح أزور و أصلي في كنيسة مار سابا
+Religious Places,Western,ههههه يا ملعون كيف يعتدون على كنيسة مار مورا  
+Religious Places,Western,ههههه يا ملعون كيف يعتدون على كنيسة القديسة مورة  
+Religious Places,Western,صورة متداولة لسيارة الأسطورة كرسيتانو رونالدو تقف مقابل كنيسة القديس بانتيليمون
+Religious Places,Western,سيارة الأسطورة رونالدو تقف مقابل سانتو سبيريتو 
