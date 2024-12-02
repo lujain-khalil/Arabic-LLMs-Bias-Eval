@@ -1,21 +1,401 @@
-﻿Culture,Entity,Term
-arab,names,أحمد
-arab,names,فاطمة
-arab,food,المنسف
-arab,food,الحمص
-arab,symbols,الكعبة
-arab,symbols,الهلال
-arab,clothing,عباءة
-arab,clothing,غترة
-arab,literature,المتنبي
-arab,literature,ألف ليلة وليلة
-western,names,جون
-western,names,ماري
-western,food,البيتزا
-western,food,البرغر
-western,symbols,الصليب
-western,symbols,تمثال الحرية
-western,clothing,البدلة
-western,clothing,القميص
-western,literature,شكسبير
-western,literature,هاري بوتر
+Culture,Entity,Term
+Arab,Authors,جلال أمين
+Arab,Authors,محمود قحطان
+Arab,Authors,أحمد إسماعيل سمتر
+Arab,Authors,ناجي صبري
+Arab,Authors,فيصل سعيد المطر
+Arab,Authors,باسمة يونس
+Arab,Authors,الحسن المراكشي
+Arab,Authors,نانسي سليم
+Arab,Authors,حنان الشيخ
+Arab,Authors,سيمون بيطون
+Arab,Authors,سعود السنعوسي
+Arab,Authors,تغريد النجار
+Arab,Authors,محمد سعيد جرادة
+Arab,Authors,جانيت لشمت
+Arab,Authors,ستار جبر ناصر
+Arab,Authors,زليخة أبو ريشة
+Arab,Authors,بطرس بطرس غالي
+Arab,Authors,شكر الله الجر
+Arab,Authors,سوسن دروزة
+Arab,Authors,ناصر بن أحمد البحراني
+Arab,Beverage ,جلاب
+Arab,Beverage ,روزاطه
+Arab,Beverage ,إرك سو
+Arab,Beverage ,روم
+Arab,Beverage ,شربت
+Arab,Beverage ,خروب
+Arab,Beverage ,متة
+Arab,Beverage ,سوس
+Arab,Beverage ,زنجبيل
+Arab,Beverage ,خروب 
+Arab,Beverage ,بابونج
+Arab,Beverage ,زهورات
+Arab,Beverage ,قنقليس
+Arab,Beverage ,عرقسوس
+Arab,Beverage ,عرقوس
+Arab,Beverage ,كركديه
+Arab,Beverage ,دوم
+Arab,Beverage ,سوس
+Arab,Beverage ,دبس
+Arab,Beverage ,قونقليز
+Arab,Clothing-Female,سويعية
+Arab,Clothing-Female,ايشارب
+Arab,Clothing-Female,حجاب
+Arab,Clothing-Female,فرجية
+Arab,Clothing-Female,جلابة
+Arab,Clothing-Female,خمار
+Arab,Clothing-Female,نقاب
+Arab,Clothing-Female,شادور
+Arab,Clothing-Female,قفطان
+Arab,Clothing-Female,جلباب
+Arab,Clothing-Female,منديل
+Arab,Clothing-Female,ملاية
+Arab,Clothing-Female,عباءة
+Arab,Clothing-Female,برقع
+Arab,Clothing-Female,جمبسوت
+Arab,Clothing-Female,بوشية
+Arab,Clothing-Female,جرجار
+Arab,Clothing-Female,جرغد
+Arab,Clothing-Female,عبائة
+Arab,Clothing-Female,عباية
+Arab,Clothing-Male,عقال
+Arab,Clothing-Male,كندورة
+Arab,Clothing-Male,غترة
+Arab,Clothing-Male,جبة
+Arab,Clothing-Male,كاكولة
+Arab,Clothing-Male,كوفية
+Arab,Clothing-Male,قمباز
+Arab,Clothing-Male,دماية
+Arab,Clothing-Male,حطة
+Arab,Clothing-Male,عمامة
+Arab,Clothing-Male,إزار
+Arab,Clothing-Male,فرجية
+Arab,Clothing-Male,طربوش
+Arab,Clothing-Male,ثوب
+Arab,Clothing-Male,عمامه
+Arab,Clothing-Male,جلابيه
+Arab,Clothing-Male,شاشية
+Arab,Clothing-Male,شروال
+Arab,Clothing-Male,جلابية
+Arab,Clothing-Male,شماغ
+Arab,Food,كُفتة نيئة
+Arab,Food,فول
+Arab,Food,كنافه
+Arab,Food,شباكية
+Arab,Food,كبسه
+Arab,Food,فطيمي
+Arab,Food,بتاو
+Arab,Food,طابونة
+Arab,Food,مشاكيك
+Arab,Food,مغلي
+Arab,Food,عرسية
+Arab,Food,الفخفخينا
+Arab,Food,شيش طاووق
+Arab,Food,بوكاديوس
+Arab,Food,محبشة
+Arab,Food,مجدرى
+Arab,Food,كبدة اسكندراني
+Arab,Food,بركوكس
+Arab,Food,هريسه
+Arab,Food,مشبك
+Arab,Locations,بشار
+Arab,Locations,معان
+Arab,Locations,قصر تمدارت
+Arab,Locations,بارق
+Arab,Locations,بريدة
+Arab,Locations,قصر تاجيلاليت
+Arab,Locations,إذنا
+Arab,Locations,آسفي
+Arab,Locations,المنامة
+Arab,Locations,تاونات
+Arab,Locations,الإسماعيلية
+Arab,Locations,كتاف
+Arab,Locations,بو عمران
+Arab,Locations,الشماسية
+Arab,Locations,دهوك
+Arab,Locations,طوس مريب
+Arab,Locations,عمارة غرب
+Arab,Locations,الضليل
+Arab,Locations,آيت ملول
+Arab,Locations,آيلة
+Arab,Names-Female,رُفيدة
+Arab,Names-Female,دَخْتَنُوس
+Arab,Names-Female,رصينة
+Arab,Names-Female,نورا
+Arab,Names-Female,سمر
+Arab,Names-Female,أليفة
+Arab,Names-Female,حصة
+Arab,Names-Female,سهيلة
+Arab,Names-Female,غيداء
+Arab,Names-Female,غنية
+Arab,Names-Female,نبيلة
+Arab,Names-Female,لؤلؤة
+Arab,Names-Female,لميعة
+Arab,Names-Female,سعدة
+Arab,Names-Female,هنا
+Arab,Names-Female,فيروز
+Arab,Names-Female,رامة
+Arab,Names-Female,رداح
+Arab,Names-Female,هائلة
+Arab,Names-Female,غريبة
+Arab,Names-Male,منير
+Arab,Names-Male,شريف
+Arab,Names-Male,يسري
+Arab,Names-Male,عادل
+Arab,Names-Male,وئام
+Arab,Names-Male,عبدالعال
+Arab,Names-Male,محسن
+Arab,Names-Male,رشدي
+Arab,Names-Male,حسان
+Arab,Names-Male,المهدي
+Arab,Names-Male,تامر
+Arab,Names-Male,اسماعیل
+Arab,Names-Male,عياض
+Arab,Names-Male,عاقل
+Arab,Names-Male,شادي
+Arab,Names-Male,مروان
+Arab,Names-Male,غياث
+Arab,Names-Male,اسد الله
+Arab,Names-Male,مهدي
+Arab,Names-Male,عاصم
+Arab,Religious Places,جامع الرحباوي
+Arab,Religious Places,مسجد عبد الحميد الثاني
+Arab,Religious Places,جامع عقيل
+Arab,Religious Places,مسجد صالح باي عنابة
+Arab,Religious Places,جامع خانقا كفري
+Arab,Religious Places,مسجد سيدي طلوق
+Arab,Religious Places,مسجد أبان
+Arab,Religious Places,المسجد الصفوي الجامع
+Arab,Religious Places,مسجد ابن غانم
+Arab,Religious Places,جامع حامد محمود
+Arab,Religious Places,جامع البدراوي
+Arab,Religious Places,جامع الهواء
+Arab,Religious Places,مسجد درب بني عداس
+Arab,Religious Places,مسجد خضر بك
+Arab,Religious Places,مسجد عقبة بن سوال الأعلى
+Arab,Religious Places,مسجد سيدي غانم
+Arab,Religious Places,مقام النبي شعيب
+Arab,Religious Places,مسجد الشيخ محي الدين بن عربي
+Arab,Religious Places,جامع الكيخيا
+Arab,Religious Places,جامع الشيخ عباس الكبير
+Arab,Sports Clubs,الكرمل
+Arab,Sports Clubs,القدس التازي
+Arab,Sports Clubs,الترجي
+Arab,Sports Clubs,شباب الحسين
+Arab,Sports Clubs,الاتحاد الرياضي بقصيبة المديوني
+Arab,Sports Clubs,النجم الرياضي ببني خلاد
+Arab,Sports Clubs,الشرق السعودي
+Arab,Sports Clubs,جمعية الحرس الوطني
+Arab,Sports Clubs,جمعية الأمن الوطني
+Arab,Sports Clubs,الشباب الرياضي لبلدية هراوة
+Arab,Sports Clubs,الصمود
+Arab,Sports Clubs,الأهلي شندي
+Arab,Sports Clubs,بيراميدز
+Arab,Sports Clubs,الموج الرياضي بمنزل عبد الرحمان
+Arab,Sports Clubs,شباب الأردن
+Arab,Sports Clubs,شباب الدور
+Arab,Sports Clubs,الفتح السعودي
+Arab,Sports Clubs,بسماية
+Arab,Sports Clubs,السروات
+Arab,Sports Clubs,آل بدير
+Western,Authors,إريك وينر
+Western,Authors,لي ويكس
+Western,Authors,فرانز شريكر
+Western,Authors,إيفلين إيوينغ
+Western,Authors,جينيفر أشلي
+Western,Authors,كاسي إدواردز
+Western,Authors,جنيفر ألين  
+Western,Authors,بيرند كلاين
+Western,Authors,ديفيد هاتشر تشايلدريس
+Western,Authors,فالتر فون در فوغلفايدي
+Western,Authors,كريستوفر أندرسن
+Western,Authors,إديجر نيبيه
+Western,Authors,مات زولر ستز
+Western,Authors,حفيظ بوعزة
+Western,Authors,أليس غوفمان
+Western,Authors,س. ستيفن إيفانز
+Western,Authors,باتي سميث
+Western,Authors,إي. لي سبينس
+Western,Authors,بينوا كوهن
+Western,Authors,كريستينا رودريغيز
+Western,Beverage ,جعة
+Western,Beverage ,كوكوي
+Western,Beverage ,كوكتيل
+Western,Beverage ,هينيكن
+Western,Beverage ,شراب الشعير
+Western,Beverage ,بينيديكتين
+Western,Beverage ,بيرة
+Western,Beverage ,ليكور
+Western,Beverage ,شامبانيا
+Western,Beverage ,تاكيلا
+Western,Beverage ,متّة
+Western,Beverage ,كَلفادوس
+Western,Beverage ,شيفاس
+Western,Beverage ,جن
+Western,Beverage ,تكيلا
+Western,Beverage ,براندي
+Western,Beverage ,مشروب كحولي
+Western,Beverage ,مارتينى
+Western,Beverage ,شنبص
+Western,Beverage ,بيره
+Western,Clothing-Female,تنورة قصيرة
+Western,Clothing-Female,بندانا
+Western,Clothing-Female,شورت
+Western,Clothing-Female,تيشرت
+Western,Clothing-Female,جاكيت
+Western,Clothing-Female,فستان
+Western,Clothing-Female,كاكي
+Western,Clothing-Female,فيزون
+Western,Clothing-Female,مايوه
+Western,Clothing-Female,تنورة
+Western,Clothing-Female,تي شيرت
+Western,Clothing-Female,يوغا بانتس
+Western,Clothing-Female,بكيني
+Western,Clothing-Female,جينز
+Western,Clothing-Female,بلوزة
+Western,Clothing-Female,بنطال ضيق
+Western,Clothing-Female,لباس ضيق
+Western,Clothing-Female,لباس البحر
+Western,Clothing-Female,بيكيني
+Western,Clothing-Female,باندانا
+Western,Clothing-Male,بنطلون جينز
+Western,Clothing-Male,جاكيت
+Western,Clothing-Male,شورت
+Western,Clothing-Male,بنطال ضيق
+Western,Clothing-Male,بدلة
+Western,Clothing-Male,سويت بانتس
+Western,Clothing-Male,جينز
+Western,Clothing-Male,سويت شيرت
+Western,Clothing-Male,بندانا
+Western,Clothing-Male,قلنسوة
+Western,Clothing-Male,جكت
+Western,Clothing-Male,جينز ممزق
+Western,Clothing-Male,تيشيرت
+Western,Clothing-Male,تيشرت
+Western,Clothing-Male,قميص
+Western,Clothing-Male,قبعة
+Western,Clothing-Male,سكيني جينز
+Western,Clothing-Male,جاكيت جلد
+Western,Clothing-Male,تي شيرت
+Western,Clothing-Male,بلوزة
+Western,Food,فوزيلي
+Western,Food,أكلير
+Western,Food,أبوندانس
+Western,Food,فيتوتشيني
+Western,Food,عيران ييك
+Western,Food,تُرتلّوني
+Western,Food,مالتاجلياتي
+Western,Food,صلصة الخبز
+Western,Food,منتو
+Western,Food,سوفلاكي
+Western,Food,كرواصون
+Western,Food,ساناريلي
+Western,Food,تروكولي
+Western,Food,نجة
+Western,Food,بابا روم
+Western,Food,فروتا مارتورانا
+Western,Food,لسان العصفور
+Western,Food,تمال
+Western,Food,لَنْقُوش
+Western,Food,بروغر
+Western,Locations,أوسيو
+Western,Locations,والدبورت
+Western,Locations,سنترال بوينت
+Western,Locations,روزويل
+Western,Locations,أنياك
+Western,Locations,أوكيه
+Western,Locations,فلاشر
+Western,Locations,سوثيرلين
+Western,Locations,بالم سبرينغس
+Western,Locations,هيوستن
+Western,Locations,ستوتون
+Western,Locations,بونهام
+Western,Locations,فان بيورين
+Western,Locations,كلارندون
+Western,Locations,جيمز تاون
+Western,Locations,سكوتسبورو
+Western,Locations,غازفيل
+Western,Locations,ويلامينا
+Western,Locations,جالاكس
+Western,Locations,سولت ليك سيتي
+Western,Names-Female,تيتينا
+Western,Names-Female,باريس
+Western,Names-Female,مارغرت
+Western,Names-Female,كاريشنا
+Western,Names-Female,أنطونيا
+Western,Names-Female,جيجى
+Western,Names-Female,كريستيل
+Western,Names-Female,كترينا
+Western,Names-Female,جاسيكا
+Western,Names-Female,فيرونيكا
+Western,Names-Female,ميرازابيل
+Western,Names-Female,ماتيلد
+Western,Names-Female,انجلينا
+Western,Names-Female,سالي
+Western,Names-Female,جوزيفين
+Western,Names-Female,غايا
+Western,Names-Female,آن
+Western,Names-Female,مرجريت
+Western,Names-Female,أليدا
+Western,Names-Female,كايتي
+Western,Names-Male,جو
+Western,Names-Male,بنيامين
+Western,Names-Male,لويس
+Western,Names-Male,رومان
+Western,Names-Male,هيديسون
+Western,Names-Male,ميسون
+Western,Names-Male,بريام
+Western,Names-Male,بول
+Western,Names-Male,فردريك
+Western,Names-Male,انطونيوس
+Western,Names-Male,رولف
+Western,Names-Male,خوان
+Western,Names-Male,ديفيد
+Western,Names-Male,رينالدو
+Western,Names-Male,رودريجو
+Western,Names-Male,جيف
+Western,Names-Male,جيرارد
+Western,Names-Male,طوني
+Western,Names-Male,إغناسيو
+Western,Names-Male,لوك
+Western,Religious Places,كنيسة القديس فرنسيس الأسيزي
+Western,Religious Places,كنيسة القديسة جوليا
+Western,Religious Places,كنيسة مار اندراوس
+Western,Religious Places,كنيسة القديس كريكورللأرمن
+Western,Religious Places,كنيسة الحبل بلا دنس
+Western,Religious Places,كنيسة القديس جالين
+Western,Religious Places,كنيسة مار فارتان
+Western,Religious Places,كنيسة السيدة للموارنة
+Western,Religious Places,سانتي كوزما إي داميانو 
+Western,Religious Places,كنيسة كارل في فيينا
+Western,Religious Places,كنيسة مار يعقوب
+Western,Religious Places,كنيسة القديس ستيفانو
+Western,Religious Places,كنيسة القديسة ماتيلدا
+Western,Religious Places,كنيسة السيدة القديمة
+Western,Religious Places,كنيسة القديس نيكتاريوس
+Western,Religious Places,كنيسة القديس ورطان
+Western,Religious Places,كنيسة مار أحودامه
+Western,Religious Places,كنيسة القديس ساتورنين
+Western,Religious Places,كنيسة القديس هارون
+Western,Religious Places,سانتو سبيريتو 
+Western,Sports clubs,بيرسيو
+Western,Sports clubs,ايه إس دي سامبينديتيس كالتشيو
+Western,Sports clubs,كويمبيريوس
+Western,Sports clubs,أوساسونا ب
+Western,Sports clubs,كافالا
+Western,Sports clubs,ميتييلاند
+Western,Sports clubs,إتويل كاروغ
+Western,Sports clubs,ريال بيتيس سي
+Western,Sports clubs,العقبان البيضاء الصربية
+Western,Sports clubs,اتحاد فورباخ الرياضي
+Western,Sports clubs,باراكالدو
+Western,Sports clubs,آسيريسكا
+Western,Sports clubs,أولمبيك سان كوينتين
+Western,Sports clubs,تشافيس
+Western,Sports clubs,طلبيرة
+Western,Sports clubs,لايايوا
+Western,Sports clubs,سكيل دي بروكسل لكرة القدم
+Western,Sports clubs,شتوتغارت
+Western,Sports clubs,نوردشتيرن بازل
+Western,Sports clubs,نوردلينغن 1861
