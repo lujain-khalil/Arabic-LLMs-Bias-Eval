@@ -6,7 +6,7 @@ import os
 # Load context sentences, cultural terms, and sentiment words
 context_df = pd.read_csv("data/context_sentences.csv", encoding="utf-8-sig")
 culture_terms_df = pd.read_csv("data/culture_terms.csv", encoding="utf-8-sig")
-sentiment_terms_df = pd.read_csv("data/sentiment_words.csv", encoding="utf-8-sig")
+sentiment_terms_df = pd.read_csv("data/sentiment_terms.csv", encoding="utf-8-sig")
 
 # Set up command-line argument parser
 parser = argparse.ArgumentParser(description="Extract embeddings using a specified multilingual masked LLM.")
@@ -23,11 +23,12 @@ if not os.path.exists(embeddings_dir):
     os.makedirs(embeddings_dir)
 
 # Generate Embeddings for Context Sentences
+print(f"Generating {MODEL_NAME} embeddings for context sentences...")
 embeddings = []
 for index, row in context_df.iterrows():
-    sentence = row["Sentence"]
-    culture = row["Culture"]
-    entity = row["Entity"]
+    culture = row["culture"]
+    entity = row["entity"]
+    sentence = row["sentence"]
 
     try:
         embedding = get_embedding(sentence, MODEL_NAME)
@@ -36,15 +37,17 @@ for index, row in context_df.iterrows():
         print(f"Error generating embedding for sentence: {sentence}\n{e}")
 
 # Save Embeddings for Context Sentences
-embedding_df = pd.DataFrame(embeddings, columns=["Culture", "Entity", "Sentence", "Embedding"])
-embedding_df.to_pickle(f"{embeddings_dir}sentence_embeddings.pkl")
+print(f"Saving...")
+embedding_df = pd.DataFrame(embeddings, columns=["culture", "entity", "sentence", "embedding"])
+embedding_df.to_pickle(f"{embeddings_dir}context_sentence_embeddings.pkl")
 
 # Generate Embeddings for Cultural Terms
+print(f"Generating {MODEL_NAME} embeddings for cultural terms...")
 culture_embeddings = []
 for index, row in culture_terms_df.iterrows():
-    term = row["Term"]
-    culture = row["Culture"]
-    entity = row["Entity"]
+    culture = row["culture"]
+    entity = row["entity"]
+    term = row["term"]
 
     try:
         embedding = get_embedding(term, MODEL_NAME)
@@ -53,14 +56,16 @@ for index, row in culture_terms_df.iterrows():
         print(f"Error generating embedding for cultural term: {term}\n{e}")
 
 # Save Embeddings for Cultural Terms
-culture_embedding_df = pd.DataFrame(culture_embeddings, columns=["Culture", "Entity", "Term", "Embedding"])
+print(f"Saving...")
+culture_embedding_df = pd.DataFrame(culture_embeddings, columns=["culture", "entity", "term", "embedding"])
 culture_embedding_df.to_pickle(f"{embeddings_dir}culture_term_embeddings.pkl")
 
 # Generate Embeddings for Sentiment Terms
+print(f"Generating {MODEL_NAME} embeddings for sentiment terms...")
 sentiment_embeddings = []
 for index, row in sentiment_terms_df.iterrows():
-    term = row["Term"]
-    sentiment = row["Sentiment"]
+    sentiment = row["sentiment"]
+    term = row["term"]
 
     try:
         embedding = get_embedding(term, MODEL_NAME)
@@ -69,7 +74,8 @@ for index, row in sentiment_terms_df.iterrows():
         print(f"Error generating embedding for sentiment term: {term}\n{e}")
 
 # Save Embeddings for Sentiment Terms
-sentiment_embedding_df = pd.DataFrame(sentiment_embeddings, columns=["Sentiment", "Term", "Embedding"])
+print(f"Saving...")
+sentiment_embedding_df = pd.DataFrame(sentiment_embeddings, columns=["sentiment", "term", "embedding"])
 sentiment_embedding_df.to_pickle(f"{embeddings_dir}sentiment_term_embeddings.pkl")
 
 print(f"Embeddings successfully generated and saved in '{embeddings_dir}' directory.")

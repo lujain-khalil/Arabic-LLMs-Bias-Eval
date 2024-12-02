@@ -1,5 +1,6 @@
 from transformers import AutoTokenizer, AutoModel
 import torch
+import numpy as np
 
 SUPPORTED_MODELS = {
     # Multilingual models
@@ -8,6 +9,9 @@ SUPPORTED_MODELS = {
     "gigabert": "nlpaueb/legal-bert-base-uncased",
 }
 
+GREEN = '#90c926'  
+PURPLE = '#5f26c9'
+PALLETE = {'Arab': GREEN, 'Western': PURPLE}
 
 # Embedding Function
 def get_embedding(sentence, model_name):
@@ -27,3 +31,6 @@ def get_embedding(sentence, model_name):
         outputs = model(**inputs)
         embedding = outputs.last_hidden_state.mean(dim=1).squeeze().numpy()
     return embedding
+
+def compute_norm(embedding):
+    return np.linalg.norm(embedding)
