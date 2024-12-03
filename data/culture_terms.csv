@@ -1,91 +1,101 @@
 culture,entity,term
-Arab,Authors,نانسي سليم
-Arab,Authors,الحسن المراكشي
-Arab,Authors,جلال أمين
-Arab,Authors,ستار جبر ناصر
-Arab,Authors,محمد سعيد جرادة
-Arab,Beverage ,عرقسوس
-Arab,Beverage ,بابونج
-Arab,Beverage ,روم
-Arab,Beverage ,روزاطه
-Arab,Beverage ,سوس
-Arab,Clothing-Female,نقاب
-Arab,Clothing-Female,جمبسوت
-Arab,Clothing-Female,سويعية
-Arab,Clothing-Female,قفطان
-Arab,Clothing-Female,منديل
-Arab,Clothing-Male,عمامة
-Arab,Clothing-Male,حطة
-Arab,Clothing-Male,شماغ
-Arab,Clothing-Male,قمباز
-Arab,Clothing-Male,كندورة
-Arab,Food,هريسه
-Arab,Food,محبشة
-Arab,Food,بوكاديوس
-Arab,Food,شيش طاووق
-Arab,Food,طابونة
-Arab,Locations,آيلة
-Arab,Locations,بشار
-Arab,Locations,طوس مريب
-Arab,Locations,المنامة
-Arab,Locations,بو عمران
-Arab,Names-Female,هنا
-Arab,Names-Female,أليفة
-Arab,Names-Female,رداح
-Arab,Names-Female,غنية
-Arab,Names-Female,دَخْتَنُوس
-Arab,Names-Male,عبدالعال
-Arab,Names-Male,رشدي
-Arab,Names-Male,شادي
-Arab,Names-Male,عياض
-Arab,Names-Male,شريف
-Arab,Religious Places,جامع خانقا كفري
-Arab,Religious Places,جامع الشيخ عباس الكبير
-Arab,Religious Places,جامع الهواء
-Arab,Religious Places,مسجد عقبة بن سوال الأعلى
-Arab,Religious Places,مسجد الشيخ محي الدين بن عربي
-Western,Authors,أليس غوفمان
-Western,Authors,إي. لي سبينس
-Western,Authors,كريستوفر أندرسن
-Western,Authors,جينيفر أشلي
-Western,Authors,إديجر نيبيه
-Western,Beverage ,ليكور
-Western,Beverage ,شيفاس
-Western,Beverage ,متّة
-Western,Beverage ,شراب الشعير
-Western,Beverage ,هينيكن
-Western,Clothing-Female,يوغا بانتس
-Western,Clothing-Female,كاكي
-Western,Clothing-Female,لباس ضيق
-Western,Clothing-Female,فستان
-Western,Clothing-Female,بيكيني
-Western,Clothing-Male,تي شيرت
-Western,Clothing-Male,قلنسوة
-Western,Clothing-Male,بدلة
-Western,Clothing-Male,قبعة
-Western,Clothing-Male,تيشيرت
-Western,Food,نجة
-Western,Food,تُرتلّوني
-Western,Food,عيران ييك
-Western,Food,كرواصون
-Western,Food,سوفلاكي
-Western,Locations,أنياك
-Western,Locations,جالاكس
-Western,Locations,ستوتون
-Western,Locations,ويلامينا
-Western,Locations,فان بيورين
-Western,Names-Female,أنطونيا
-Western,Names-Female,فيرونيكا
-Western,Names-Female,جوزيفين
-Western,Names-Female,مرجريت
-Western,Names-Female,جيجى
-Western,Names-Male,بريام
-Western,Names-Male,إغناسيو
-Western,Names-Male,لوك
-Western,Names-Male,رودريجو
-Western,Names-Male,ديفيد
-Western,Religious Places,كنيسة مار اندراوس
-Western,Religious Places,كنيسة السيدة القديمة
-Western,Religious Places,كنيسة القديس كريكورللأرمن
-Western,Religious Places,كنيسة كارل في فيينا
-Western,Religious Places,كنيسة القديسة ماتيلدا
+Arab,authors,جانيت لشمت
+Arab,authors,سوسن دروزة
+Arab,authors,سعود السنعوسي
+Arab,authors,سيمون بيطون
+Arab,authors,باسمة يونس
+Arab,beverage,قشر
+Arab,beverage,رمان
+Arab,beverage,عرقسوس
+Arab,beverage,سوس
+Arab,beverage,دوم
+Arab,clothing-female,جلابة
+Arab,clothing-female,سويعية
+Arab,clothing-female,بوشية
+Arab,clothing-female,جلباب
+Arab,clothing-female,نقاب
+Arab,clothing-male,جلابية
+Arab,clothing-male,جلابيه
+Arab,clothing-male,شروال
+Arab,clothing-male,فرجية
+Arab,clothing-male,قمباز
+Arab,food,محبشة
+Arab,food,الفخفخينا
+Arab,food,شيش طاووق
+Arab,food,فول
+Arab,food,كنافه
+Arab,location,الجبيهة
+Arab,location,قصر سرت
+Arab,location,قصر بوزملاه
+Arab,location,مأرب
+Arab,location,قصر تعشات
+Arab,names-female,لؤلؤة
+Arab,names-female,سمر
+Arab,names-female,فيروز
+Arab,names-female,هنا
+Arab,names-female,رصينة
+Arab,names-male,مروان
+Arab,names-male,عبدالعال
+Arab,names-male,اسماعیل
+Arab,names-male,تامر
+Arab,names-male,وئام
+Arab,religious places,مسجد عبد الحميد الثاني
+Arab,religious places,جامع الهواء
+Arab,religious places,جامع الشيخ عباس الكبير
+Arab,religious places,مسجد أبان
+Arab,religious places,المسجد الصفوي الجامع
+Arab,sports clubs,جمعية تمسمان
+Arab,sports clubs,الترجي
+Arab,sports clubs,الشباب الرياضي لبلدية هراوة
+Arab,sports clubs,سرمدا
+Arab,sports clubs,النقل
+Western,authors,لي ويكس
+Western,authors,ديفيد هاتشر تشايلدريس
+Western,authors,أليس غوفمان
+Western,authors,إي. لي سبينس
+Western,authors,فالتر فون در فوغلفايدي
+Western,beverage,مارتينى
+Western,beverage,بينيديكتين
+Western,beverage,كوكوي
+Western,beverage,براندي
+Western,beverage,بيره
+Western,clothing-female,بيكيني
+Western,clothing-female,بنطال ضيق
+Western,clothing-female,فيزون
+Western,clothing-female,تنورة قصيرة
+Western,clothing-female,شورت
+Western,clothing-male,جاكيت
+Western,clothing-male,تيشيرت
+Western,clothing-male,بدلة
+Western,clothing-male,بنطلون جينز
+Western,clothing-male,قميص
+Western,food,عيران ييك
+Western,food,جورك
+Western,food,منتو
+Western,food,مدزلونه
+Western,food,أكلير
+Western,location,ويلامينا
+Western,location,سيرريتوس
+Western,location,كانزاس سيتي
+Western,location,غرينوود
+Western,location,ري
+Western,names-female,كايتي
+Western,names-female,آن
+Western,names-female,جوزيفين
+Western,names-female,كريستيل
+Western,names-female,انجلينا
+Western,names-male,لويس
+Western,names-male,ديفيد
+Western,names-male,جو
+Western,names-male,إغناسيو
+Western,names-male,بول
+Western,religious places,كنيسة مار فارتان
+Western,religious places,كنيسة القديس ساتورنين
+Western,religious places,كنيسة مار يعقوب
+Western,religious places,كنيسة السيدة للموارنة
+Western,religious places,كنيسة القديس ستيفانو
+Western,sports clubs,إنترناسيونال تورينو
+Western,sports clubs,فيغيرويلاس
+Western,sports clubs,شالكه 04
+Western,sports clubs,فيس بيزارو 1898
+Western,sports clubs,يورك ناين

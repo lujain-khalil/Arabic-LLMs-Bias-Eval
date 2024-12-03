@@ -3,10 +3,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import argparse
-from utils import SUPPORTED_MODELS, GREEN, PURPLE, PALLETE, compute_norm
+from utils import SUPPORTED_MODELS, GREEN, PURPLE, PALLETE, compute_norm, check_normality, perform_statistical_test
 import os 
 import json
-import scipy.stats as stats
 
 parser = argparse.ArgumentParser(description="Evaluate embeddings using a specified multilingual masked LLM.")
 parser.add_argument('model_name', type=str, choices=SUPPORTED_MODELS.keys(), help="Name of the model to use (e.g., 'xlm-roberta-base', 'mbert', 'gigabert')")
@@ -55,7 +54,7 @@ norms_df = pd.DataFrame({
 # Boxplot
 plt.figure(figsize=(8, 6))
 sns.boxplot(data=norms_df, x='Culture', y='Norm', hue='Culture', legend=False, palette=PALLETE)
-plt.title('Distribution of Norms: Arab vs Western Terms')
+plt.title(f'Distribution of Norms: Arab vs Western Terms ({MODEL_NAME})')
 plt.xlabel('Cultural Group')
 plt.ylabel('Embedding Norm')
 plt.tight_layout()
@@ -65,7 +64,7 @@ plt.close()
 # Violin Plot
 plt.figure(figsize=(8, 6))
 sns.violinplot(data=norms_df, x='Culture', y='Norm', hue='Culture', legend=False, palette=PALLETE)
-plt.title('Distribution of Norms: Arab vs Western Terms')
+plt.title(f'Distribution of Norms: Arab vs Western Terms ({MODEL_NAME})')
 plt.xlabel('Cultural Group')
 plt.ylabel('Embedding Norm')
 plt.tight_layout()
@@ -76,7 +75,7 @@ plt.close()
 plt.figure(figsize=(8, 6))
 sns.histplot(arab_norms, kde=True, color=GREEN, label='Arab', stat='density', bins=20, alpha=0.5)
 sns.histplot(western_norms, kde=True, color=PURPLE, label='Western', stat='density', bins=20, alpha=0.5)
-plt.title('Norm Distribution with KDE: Arab vs Western Terms')
+plt.title(f'Norm Distribution with KDE: Arab vs Western Terms ({MODEL_NAME})')
 plt.xlabel('Embedding Norm')
 plt.ylabel('Density')
 plt.legend()
@@ -88,7 +87,7 @@ plt.close()
 plt.figure(figsize=(8, 6))
 sns.ecdfplot(arab_norms, color=GREEN, label='Arab', linewidth=2)
 sns.ecdfplot(western_norms, color=PURPLE, label='Western', linewidth=2)
-plt.title('CDF of Norms: Arab vs Western Terms')
+plt.title(f'CDF of Norms: Arab vs Western Terms {MODEL_NAME}')
 plt.xlabel('Embedding Norm')
 plt.ylabel('CDF')
 plt.legend()
@@ -109,63 +108,14 @@ with open(f"{results_dir}mean_std_values.json", 'w') as json_file:
 
 plt.figure(figsize=(15, 6))
 sns.barplot(data=culture_entity_stats, x='entity', y='mean', hue='culture', palette=PALLETE)
-plt.title('Mean Embedding Norms by Culture and Entity')
+plt.title(f'Mean Embedding Norms by Culture and Entity ({MODEL_NAME})')
 plt.xlabel('Entity')
 plt.ylabel('Mean Norm')
 plt.tight_layout()
 plt.savefig(f"{results_dir}culture_entity_comparison.png")
 plt.close()
 
-print(f"All visualizations have been saved in '{results_dir}' directory.")
-
-# Helper function to check normality using multiple tests
-def check_normality(data):
-    normality_results = {}
-
-    # Shapiro-Wilk Test
-    shapiro_stat, shapiro_pvalue = stats.shapiro(data)
-    shapiro_stat, shapiro_pvalue = float(shapiro_stat), float(shapiro_pvalue)
-    normality_results['shapiro_wilk'] = {
-        'statistic': (shapiro_stat),
-        'p_value': shapiro_pvalue,
-        'normal': shapiro_pvalue > 0.05  # Normal if p-value > 0.05
-    }
-
-    # Kolmogorov-Smirnov Test
-    ks_stat, ks_pvalue = stats.kstest(data, 'norm')
-    ks_stat, ks_pvalue = float(ks_stat), float(ks_pvalue)
-    normality_results['kolmogorov_smirnov'] = {
-        'statistic': ks_stat,
-        'p_value': ks_pvalue,
-        'normal': ks_pvalue > 0.05  # Normal if p-value > 0.05
-    }
-
-    return normality_results
-
-# Function to perform t-test or Mann-Whitney U test based on normality results
-def perform_statistical_test(arab_norms, western_norms, normality_results):
-    statistical_test_results = {}
-
-    # If both are normal, use a t-test
-    if normality_results['shapiro_wilk']['normal'] and normality_results['kolmogorov_smirnov']['normal']:
-        t_stat, t_pvalue = stats.ttest_ind(arab_norms, western_norms)
-        t_stat, t_pvalue = float(t_stat), float(t_pvalue)
-        statistical_test_results['t_test'] = {
-            'statistic': t_stat,
-            'p_value': t_pvalue,
-            'significant': t_pvalue < 0.05  # Significant if p-value < 0.05
-        }
-    else:
-        # If either of the distributions is not normal, use Mann-Whitney U test
-        u_stat, u_pvalue = stats.mannwhitneyu(arab_norms, western_norms)
-        u_stat, u_pvalue = float(u_stat), float(u_pvalue)
-        statistical_test_results['mann_whitney_u'] = {
-            'statistic': u_stat,
-            'p_value': u_pvalue,
-            'significant': u_pvalue < 0.05  # Significant if p-value < 0.05
-        }
-
-    return statistical_test_results
+print(f"All visualizations for {MODEL_NAME} have been saved in '{results_dir}' directory.")
 
 # Check normality for Arab and Western norms
 arab_normality = check_normality(arab_norms)
@@ -182,11 +132,6 @@ results = {
     },
     'statistical_tests': statistical_results
 }
-
-# Save results to a JSON file
-results_dir = f"results/{MODEL_NAME}/"
-if not os.path.exists(results_dir):
-    os.makedirs(results_dir)
 
 with open(f"{results_dir}statistical_tests.json", 'w') as json_file:
     json.dump(results, json_file, indent=4)

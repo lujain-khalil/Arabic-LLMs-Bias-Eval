@@ -10,8 +10,7 @@ sentiment_terms_df = pd.read_csv("data/sentiment_terms.csv", encoding="utf-8-sig
 
 # Set up command-line argument parser
 parser = argparse.ArgumentParser(description="Extract embeddings using a specified multilingual masked LLM.")
-parser.add_argument('model_name', type=str, choices=SUPPORTED_MODELS.keys(),
-                    help="Name of the model to use (e.g., 'xlm-roberta-base', 'mbert', 'gigabert')")
+parser.add_argument('model_name', type=str, choices=SUPPORTED_MODELS.keys(), help="Name of the model to use (e.g., 'xlm-roberta-base', 'mbert', 'gigabert')")
 
 # Parse command-line arguments
 args = parser.parse_args()
@@ -31,6 +30,7 @@ for index, row in context_df.iterrows():
     sentence = row["sentence"]
 
     try:
+        print(f"Sentence {index+1}/{context_df.shape[0]}")
         embedding = get_embedding(sentence, MODEL_NAME)
         embeddings.append((culture, entity, sentence, embedding))
     except Exception as e:
@@ -50,6 +50,7 @@ for index, row in culture_terms_df.iterrows():
     term = row["term"]
 
     try:
+        print(f"Culture term {index+1}/{culture_terms_df.shape[0]}")
         embedding = get_embedding(term, MODEL_NAME)
         culture_embeddings.append((culture, entity, term, embedding))
     except Exception as e:
@@ -68,6 +69,7 @@ for index, row in sentiment_terms_df.iterrows():
     term = row["term"]
 
     try:
+        print(f"Sentiment term {index+1}/{sentiment_terms_df.shape[0]}")
         embedding = get_embedding(term, MODEL_NAME)
         sentiment_embeddings.append((sentiment, term, embedding))
     except Exception as e:
