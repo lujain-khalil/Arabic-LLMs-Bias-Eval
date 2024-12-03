@@ -10,6 +10,9 @@ SUPPORTED_MODELS = {
     "xlm-roberta-base": "xlm-roberta-base",
     "mbert": "bert-base-multilingual-cased",
     "gigabert": "nlpaueb/legal-bert-base-uncased",
+    "arabert": "aubmindlab/bert-base-arabertv2",  
+    "marbert": "UBC-NLP/MARBERTv2",  
+    "camelbert": "CAMeL-Lab/bert-base-arabic-camelbert-mix",  
 }
 
 GREEN = '#90c926'  
