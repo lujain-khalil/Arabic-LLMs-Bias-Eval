@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
+*.pyc 
 
 # C extensions
 *.so
@@ -66,9 +67,6 @@ docs/_build/
 # PyBuilder
 target/
 
-# Jupyter Notebook
-.ipynb_checkpoints
-
 # IPython
 profile_default/
 ipython_config.py
@@ -116,4 +114,3 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
-*.ipynb
