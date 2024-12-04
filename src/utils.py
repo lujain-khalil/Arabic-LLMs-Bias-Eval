@@ -2,7 +2,7 @@ from transformers import AutoTokenizer, AutoModel
 import torch
 import numpy as np
 import scipy.stats as stats
-from scipy.spatial.distance import cdist
+from scipy.spatial.distance import cdist, cosine
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -10,9 +10,6 @@ SUPPORTED_MODELS = {
     "xlm-roberta-base": "xlm-roberta-base",
     "mbert": "bert-base-multilingual-cased",
     "gigabert": "nlpaueb/legal-bert-base-uncased",
-    "arabert": "aubmindlab/bert-base-arabertv2",  
-    "marbert": "UBC-NLP/MARBERTv2",  
-    "camelbert": "CAMeL-Lab/bert-base-arabic-camelbert-mix",  
 }
 
 GREEN = '#90c926'  
@@ -118,15 +115,6 @@ def scatter_plot(df, column, title, save_path, palette = 'flare'):
         palette=palette,
         s=100,
     )
-    # for _, row in df.iterrows():
-    #     ax.annotate(
-    #         row['Term'],
-    #         (row['t-SNE 1'], row['t-SNE 2']),
-    #         textcoords="offset points",
-    #         xytext=(5, 5),
-    #         ha='center',
-    #         fontsize=8
-    #     )
     plt.title(title)
     plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
     plt.tight_layout()
@@ -142,3 +130,69 @@ def map_labels(labels, df):
         cluster_mapping[cluster] = majority_label
 
     return np.array([cluster_mapping[label] for label in labels])
+
+def compute_association(w, A, B):
+    mean_cos_A = np.mean([1 - cosine(w, a) for a in A])
+    mean_cos_B = np.mean([1 - cosine(w, b) for b in B])
+    return mean_cos_A - mean_cos_B
+
+
+def compute_seat_weat(target, attribute):
+    target_embeddings = {
+        'Arab': target[target['culture'] == 'Arab']['embedding'].values,
+        'Western': target[target['culture'] == 'Western']['embedding'].values
+    }
+    attribute_embeddings = {
+        'Positive': attribute[attribute['sentiment'] == 'positive']['embedding'].values,
+        'Negative': attribute[attribute['sentiment'] == 'negative']['embedding'].values
+    }
+
+    M = target_embeddings['Arab']  
+    F = target_embeddings['Western']
+    A = attribute_embeddings['Positive']
+    B = attribute_embeddings['Negative']
+
+    s_m = np.array([compute_association(m, A, B) for m in M])
+    s_f = np.array([compute_association(f, A, B) for f in F])
+
+    mu_m, sigma_m = np.mean(s_m), np.std(s_m)
+    mu_f, sigma_f = np.mean(s_f), np.std(s_f)
+
+    score = (mu_m / sigma_m) - (mu_f / sigma_f)
+
+    return {
+        "Score": float(score),
+        "Mean Arab (M)": float(mu_m),
+        "Std Arab (M)": float(sigma_m),
+        "Mean Western (F)": float(mu_f),
+        "Std Western (F)": float(sigma_f)
+    }
+
+# SAME Metric Calculation
+def compute_same(target, attribute):
+    target_embeddings = {
+        'Arab': target[target['culture'] == 'Arab']['embedding'].values,
+        'Western': target[target['culture'] == 'Western']['embedding'].values
+    }
+    attribute_embeddings = {
+        'Positive': attribute[attribute['sentiment'] == 'positive']['embedding'].values,
+        'Negative': attribute[attribute['sentiment'] == 'negative']['embedding'].values
+    }
+    same_results = {}
+    for culture in ['Arab', 'Western']:
+        # Normalize attribute sets A and B
+        mean_A = np.mean(attribute_embeddings['Positive'], axis=0)
+        mean_B = np.mean(attribute_embeddings['Negative'], axis=0)
+        normalized_A = mean_A / np.linalg.norm(mean_A)
+        normalized_B = mean_B / np.linalg.norm(mean_B)
+
+        # Calculate SAME score
+        same_score = 0
+        for t in target_embeddings[culture]:
+            normalized_t = t / np.linalg.norm(t)
+            b_t = np.dot(normalized_t, normalized_A - normalized_B)
+            same_score += abs(b_t)
+
+        same_results[culture] = same_score / len(target_embeddings[culture])
+        
+    return same_results 

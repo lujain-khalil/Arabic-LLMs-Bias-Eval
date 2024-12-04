@@ -60,10 +60,10 @@ intra_culture_entity, inter_culture_entity = compute_cluster_distances(all_embed
 
 # Plots
 print(f"Plotting...")
-scatter_plot(tsne_df, 'Culture', 't-SNE Visualization: Grouped by Culture', f"{results_dir}tsne_plot_culture.png", PALLETE)
-scatter_plot(tsne_df, 'Entity', 't-SNE Visualization: Grouped by Entity', f"{results_dir}tsne_plot_entity.png")
-scatter_plot(tsne_df, 'Culture-Entity', 't-SNE Visualization: Grouped by Culture-Entity', f"{results_dir}tsne_plot_culture_entity.png")
-scatter_plot(tsne_df, 'KMeans_Cluster', 'K-Means Clustering Results', f"{results_dir}kmeans_clusters.png", PALLETE)
+scatter_plot(tsne_df, 'Culture', f't-SNE Visualization: Grouped by Culture ({MODEL_NAME})', f"{results_dir}tsne_plot_culture.png", PALLETE)
+scatter_plot(tsne_df, 'Entity', f't-SNE Visualization: Grouped by Entity ({MODEL_NAME})', f"{results_dir}tsne_plot_entity.png")
+scatter_plot(tsne_df, 'Culture-Entity', f't-SNE Visualization: Grouped by Culture-Entity ({MODEL_NAME})', f"{results_dir}tsne_plot_culture_entity.png")
+scatter_plot(tsne_df, 'KMeans_Cluster', f'K-Means Clustering Results ({MODEL_NAME})', f"{results_dir}kmeans_clusters.png", PALLETE)
 
 # Save results
 print(f"Saving results...")

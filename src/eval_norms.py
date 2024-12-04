@@ -13,7 +13,7 @@ parser.add_argument('model_name', type=str, choices=SUPPORTED_MODELS.keys(), hel
 args = parser.parse_args()
 MODEL_NAME = args.model_name
 
-results_dir = f"results/{MODEL_NAME}/relative_norm_distance/"
+results_dir = f"results/{MODEL_NAME}/norms/"
 if not os.path.exists(results_dir):
     os.makedirs(results_dir)
 
@@ -113,7 +113,6 @@ plt.xlabel('Entity')
 plt.ylabel('Mean Norm')
 plt.tight_layout()
 plt.savefig(f"{results_dir}culture_entity_comparison.png")
-plt.close()
 
 print(f"All visualizations for {MODEL_NAME} have been saved in '{results_dir}' directory.")
 
