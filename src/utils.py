@@ -36,6 +36,29 @@ ENTITY_PALLETE = {
     "sports clubs": "#17becf"      # Cyan
 }
 
+CULTURE_ENTITY_PALLETE = {
+    "Arab-authors": "#1f77b4",          # Blue
+    "Western-authors": "#154c70",       # Darker Blue
+    "Arab-beverage": "#ff7f0e",         # Orange
+    "Western-beverage": "#b25907",      # Darker Orange
+    "Arab-clothing-female": "#2ca02c",  # Green
+    "Western-clothing-female": "#196a19",# Darker Green
+    "Arab-clothing-male": "#d62728",    # Red
+    "Western-clothing-male": "#8b1b1c", # Darker Red
+    "Arab-food": "#9467bd",             # Purple
+    "Western-food": "#5e3d80",          # Darker Purple
+    "Arab-location": "#8c564b",         # Brown
+    "Western-location": "#5b392e",      # Darker Brown
+    "Arab-names-female": "#e377c2",     # Pink
+    "Western-names-female": "#924e7c",  # Darker Pink
+    "Arab-names-male": "#7f7f7f",       # Gray
+    "Western-names-male": "#4d4d4d",    # Darker Gray
+    "Arab-religious places": "#bcbd22", # Yellow-Green
+    "Western-religious places": "#7a7c16", # Darker Yellow-Green
+    "Arab-sports clubs": "#17becf",     # Cyan
+    "Western-sports clubs": "#0d7a86"   # Darker Cyan
+}
+
 # Embedding Function
 def get_embedding(sentence, model_name):
     if model_name not in SUPPORTED_MODELS:
