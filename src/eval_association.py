@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import argparse
-from utils import SUPPORTED_MODELS, PURPLE, GREEN, PALLETE, compute_seat_weat, compute_same
+from utils import SUPPORTED_MODELS, PURPLE, GREEN, PALLETE, ENTITY_PALLETE, compute_seat_weat, compute_same, normalize_embedding
 import os 
 import json
 import matplotlib.pyplot as plt
@@ -18,9 +18,15 @@ if not os.path.exists(results_dir):
     os.makedirs(results_dir)
 
 # Load the generated embeddings for cultural terms
+print("Reading pickle files...")
 culture_embeddings = pd.read_pickle(f"embeddings/{MODEL_NAME}/culture_term_embeddings.pkl")
 sentence_embeddings = pd.read_pickle(f"embeddings/{MODEL_NAME}/context_sentence_embeddings.pkl")
 sentiment_embeddings = pd.read_pickle(f"embeddings/{MODEL_NAME}/sentiment_term_embeddings.pkl")
+
+print("Normalizing embeddings...")
+culture_embeddings['embedding'] = culture_embeddings['embedding'].apply(normalize_embedding)
+sentence_embeddings['embedding'] = sentence_embeddings['embedding'].apply(normalize_embedding)
+sentiment_embeddings['embedding'] = sentiment_embeddings['embedding'].apply(normalize_embedding)
 
 combined_results = {}
 
@@ -64,18 +70,29 @@ for entity in culture_embeddings['entity'].unique():
 
     combined_results[f'SAME for {entity} sentences'] = entity_results
 
+print(f"Saving results...")
 with open(f"{results_dir}asssociation_metrics_results.json", 'w') as f:
     json.dump(combined_results, f, indent=4)
 
-print(f"WEAT, SEAT, and SAME results saved in '{results_dir}asssociation_metrics_results.json'")
-
 # ------------ Generating plots ------------
 
+import seaborn as sns
+import pandas as pd
+
 def bar_plot(data, score):
+    df = pd.DataFrame({'Category': data.keys(), 'Score': data.values()})
+    
     plt.figure(figsize=(15, 6))
-    plt.bar(data.keys(), data.values(), color=PURPLE)
-    plt.title(f"{score} for Cultural Terms ({MODEL_NAME})")
-    plt.ylabel(f"{score} Score")
+    temp_pallete = ENTITY_PALLETE
+    temp_pallete[score] = PURPLE
+    ax = sns.barplot(x='Category', y='Score', data=df, hue='Category', palette=temp_pallete, legend=False)
+    
+    ax.set_title(f"{score} for Cultural Terms ({MODEL_NAME})")
+    ax.set_ylabel(f"{score} Score")
+    
+    for container in ax.containers:
+        ax.bar_label(container, fmt='%.3f', padding=3)
+    
     plt.tight_layout()
     plt.savefig(f"{results_dir}{score.lower()}_scores.png")
 
@@ -84,13 +101,16 @@ def grouped_bar_plot(data, target):
     for term_category, cultures in data.items():
         for culture, score in cultures.items():
             tidy_data.append({
-                "entity": term_category.replace("SAME for ", "").replace(" terms", ""),
+                "entity": 'SAME' if term_category == f'SAME-{target.lower()}' else term_category.replace("SAME for ", "").replace(" terms", ""),
                 "SAME": score,
                 "culture": culture
             })
 
     plt.figure(figsize=(15, 6))
-    sns.barplot(data=pd.DataFrame(tidy_data), x='entity', y='SAME', hue='culture', palette=PALLETE)
+    barplot = sns.barplot(data=pd.DataFrame(tidy_data), x='entity', y='SAME', hue='culture', palette=PALLETE)
+
+    for container in barplot.containers:
+        barplot.bar_label(container, fmt='%.3f', padding=3)
 
     plt.title(f"SAME for Cultural {target} ({MODEL_NAME})")
     plt.ylabel("SAME Score")
@@ -99,24 +119,29 @@ def grouped_bar_plot(data, target):
 
 def association_scores_plot(target, arab_means, arab_stds, western_means, western_stds, target_name):
     target.append(target_name)
-    x = np.arange(len(target))
-    width = 0.35
-    size = (15, 6)
-    plt.figure(figsize=size)
-    plt.bar(x - width / 2, arab_means, width, label='Arab Mean', color=GREEN)
-    plt.bar(x + width / 2, western_means, width, label='Western Mean', color=PURPLE)
+    
+    data = pd.DataFrame({
+        'Target': target * 2,
+        'Mean': arab_means + western_means,
+        'Std': arab_stds + western_stds,
+        'Group': ['Arab'] * len(target) + ['Western'] * len(target)
+    })
 
-    plt.errorbar(x - width / 2, arab_means, yerr=arab_stds, fmt='none', ecolor='black', capsize=5)
-    plt.errorbar(x + width / 2, western_means, yerr=western_stds, fmt='none', ecolor='black', capsize=5)
-
-    plt.title(f"Mean and Standard Deviation of {score} Association Scores ({MODEL_NAME})")
-    plt.xlabel(f"{target_name}")
-    plt.ylabel("Association Score")
-    plt.xticks(x, target)
-    plt.legend()
+    plt.figure(figsize=(15, 6))
+    ax = sns.barplot(x='Target', y='Mean', hue='Group', data=data, errorbar=None, palette=PALLETE)
+    for container in ax.containers:
+        ax.bar_label(container, fmt='%.3f', padding=3)
+        
+    ax.set_title(f"Mean and Standard Deviation of {score} Association Scores ({MODEL_NAME})")
+    ax.set_ylabel("Association Score")
+    ax.set_xlabel("Target")
+    ax.legend()
+    
     plt.tight_layout()
     plt.savefig(f"{results_dir}{score.lower()}_association_scores.png")
-    
+
+print(f"Genrating plots...")
+
 # 1. WEAT for cultural terms
 weat_data = {
     entity: combined_results[f"WEAT for {entity}"]["Score"]
@@ -166,3 +191,5 @@ for score in ['WEAT', 'SEAT']:
     western_stds.append(combined_results[score]["Std Western (F)"])
 
     association_scores_plot(entities, arab_means, arab_stds, western_means, western_stds, score)
+
+print(f"WEAT, SEAT, and SAME results saved in '{results_dir}asssociation_metrics_results.json'")

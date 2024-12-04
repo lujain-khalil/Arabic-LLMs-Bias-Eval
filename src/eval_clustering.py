@@ -59,7 +59,7 @@ intra_culture, inter_culture = compute_cluster_distances(all_embeddings, tsne_df
 intra_culture_entity, inter_culture_entity = compute_cluster_distances(all_embeddings, tsne_df['Culture-Entity'].values, 'Culture-Entity')
 
 # Plots
-print(f"Plotting...")
+print(f"Generating plots...")
 scatter_plot(tsne_df, 'Culture', f't-SNE Visualization: Grouped by Culture ({MODEL_NAME})', f"{results_dir}tsne_plot_culture.png", PALLETE)
 scatter_plot(tsne_df, 'Entity', f't-SNE Visualization: Grouped by Entity ({MODEL_NAME})', f"{results_dir}tsne_plot_entity.png", ENTITY_PALLETE)
 scatter_plot(tsne_df, 'Culture-Entity', f't-SNE Visualization: Grouped by Culture-Entity ({MODEL_NAME})', f"{results_dir}tsne_plot_culture_entity.png", CULTURE_ENTITY_PALLETE)

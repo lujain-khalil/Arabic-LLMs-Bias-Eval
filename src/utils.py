@@ -81,6 +81,12 @@ def get_embedding(sentence, model_name):
 def compute_norm(embedding):
     return np.linalg.norm(embedding)
 
+def normalize_embedding(embedding):
+    norm = np.linalg.norm(embedding)
+    if norm == 0:
+        raise ValueError("Cannot normalize an embedding with zero norm.")
+    return embedding / norm
+
 # Helper function to check normality using multiple tests
 def check_normality(data):
     normality_results = {}
@@ -106,11 +112,11 @@ def check_normality(data):
     return normality_results
 
 # Function to perform t-test or Mann-Whitney U test based on normality results
-def perform_statistical_test(arab_norms, western_norms, normality_results):
+def perform_statistical_test(arab_norms, western_norms, arab_normality, western_normality):
     statistical_test_results = {}
-
+    is_normal = arab_normality['shapiro_wilk']['normal'] and arab_normality['kolmogorov_smirnov']['normal'] and western_normality['shapiro_wilk']['normal'] and western_normality['kolmogorov_smirnov']['normal']
     # If both are normal, use a t-test
-    if normality_results['shapiro_wilk']['normal'] and normality_results['kolmogorov_smirnov']['normal']:
+    if is_normal:
         t_stat, t_pvalue = stats.ttest_ind(arab_norms, western_norms)
         t_stat, t_pvalue = float(t_stat), float(t_pvalue)
         statistical_test_results['t_test'] = {
@@ -158,6 +164,16 @@ def scatter_plot(df, column, title, save_path, palette = 'flare'):
         palette=palette,
         s=100,
     )
+    cluster_centroids = df.groupby(column)[['t-SNE 1', 't-SNE 2']].mean()
+    for cluster_name, (x, y) in cluster_centroids.iterrows():
+        plt.text(
+            x, y, str(cluster_name),
+            horizontalalignment='center',
+            verticalalignment='center',
+            fontsize=10,
+            color='black',
+            bbox=dict(facecolor='white', edgecolor='black', boxstyle='round,pad=0.3')
+        )
     plt.title(title)
     plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
     plt.tight_layout()
@@ -201,7 +217,8 @@ def compute_seat_weat(target, attribute):
     mu_m, sigma_m = np.mean(s_m), np.std(s_m)
     mu_f, sigma_f = np.mean(s_f), np.std(s_f)
 
-    score = (mu_m / sigma_m) - (mu_f / sigma_f)
+    pooled_std = np.sqrt(((len(s_m) - 1) * sigma_m**2 + (len(s_f) - 1) * sigma_f**2) / (len(s_m) + len(s_f) - 2))
+    score = (mu_m - mu_f) / pooled_std
 
     return {
         "Score": float(score),
@@ -232,8 +249,7 @@ def compute_same(target, attribute):
         # Calculate SAME score
         same_score = 0
         for t in target_embeddings[culture]:
-            normalized_t = t / np.linalg.norm(t)
-            b_t = np.dot(normalized_t, normalized_A - normalized_B)
+            b_t = np.dot(t, normalized_A - normalized_B)
             same_score += abs(b_t)
 
         same_results[culture] = same_score / len(target_embeddings[culture])
