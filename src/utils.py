@@ -23,6 +23,18 @@ SUPPORTED_MODELS = {
 GREEN = '#90c926'  
 PURPLE = '#5f26c9'
 PALLETE = {'Arab': GREEN, 'Western': PURPLE}
+ENTITY_PALLETE = {
+    "authors": "#1f77b4",          # Blue
+    "beverage": "#ff7f0e",         # Orange
+    "clothing-female": "#2ca02c",  # Green
+    "clothing-male": "#d62728",    # Red
+    "food": "#9467bd",             # Purple
+    "location": "#8c564b",         # Brown
+    "names-female": "#e377c2",     # Pink
+    "names-male": "#7f7f7f",       # Gray
+    "religious places": "#bcbd22", # Yellow-Green
+    "sports clubs": "#17becf"      # Cyan
+}
 
 # Embedding Function
 def get_embedding(sentence, model_name):

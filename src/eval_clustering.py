@@ -6,7 +6,7 @@ from sklearn.metrics import silhouette_score
 import os 
 import argparse
 import json
-from utils import SUPPORTED_MODELS, PALLETE, compute_cluster_distances, scatter_plot, map_labels
+from utils import SUPPORTED_MODELS, PALLETE, ENTITY_PALLETE, compute_cluster_distances, scatter_plot, map_labels
 
 parser = argparse.ArgumentParser(description="Evaluate embeddings using a specified multilingual masked LLM.")
 parser.add_argument('model_name', type=str, choices=SUPPORTED_MODELS.keys(), help="Name of the model to use (e.g., 'xlm-roberta-base', 'mbert', 'gigabert')")
@@ -61,7 +61,7 @@ intra_culture_entity, inter_culture_entity = compute_cluster_distances(all_embed
 # Plots
 print(f"Plotting...")
 scatter_plot(tsne_df, 'Culture', f't-SNE Visualization: Grouped by Culture ({MODEL_NAME})', f"{results_dir}tsne_plot_culture.png", PALLETE)
-scatter_plot(tsne_df, 'Entity', f't-SNE Visualization: Grouped by Entity ({MODEL_NAME})', f"{results_dir}tsne_plot_entity.png")
+scatter_plot(tsne_df, 'Entity', f't-SNE Visualization: Grouped by Entity ({MODEL_NAME})', f"{results_dir}tsne_plot_entity.png", ENTITY_PALLETE)
 scatter_plot(tsne_df, 'Culture-Entity', f't-SNE Visualization: Grouped by Culture-Entity ({MODEL_NAME})', f"{results_dir}tsne_plot_culture_entity.png")
 scatter_plot(tsne_df, 'KMeans_Cluster', f'K-Means Clustering Results ({MODEL_NAME})', f"{results_dir}kmeans_clusters.png", PALLETE)
 
