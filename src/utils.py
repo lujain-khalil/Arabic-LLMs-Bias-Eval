@@ -9,7 +9,15 @@ import seaborn as sns
 SUPPORTED_MODELS = {
     "xlm-roberta-base": "xlm-roberta-base",
     "mbert": "bert-base-multilingual-cased",
-    "gigabert": "nlpaueb/legal-bert-base-uncased",
+    "distilbert": "distilbert/distilbert-base-multilingual-cased",
+    "bert":"google-bert/bert-base-multilingual-uncased",
+    "xlm-roberta-large": "xlm-roberta-large",
+
+    "arabert": "aubmindlab/bert-base-arabertv2",  
+    "arabertlarge":"aubmindlab/bert-large-arabertv02",
+    "marbert": "UBC-NLP/MARBERTv2",
+    "arbert": "UBC-NLP/ARBERTv2", 
+    "camelbert": "CAMeL-Lab/bert-base-arabic-camelbert-mix",
 }
 
 GREEN = '#90c926'  
