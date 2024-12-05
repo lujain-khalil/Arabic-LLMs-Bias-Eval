@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import argparse
-from utils import SUPPORTED_MODELS, PURPLE, GREEN, PALLETE, ENTITY_PALLETE, compute_seat_weat, compute_same, normalize_embedding
+from utils import SUPPORTED_MODELS, PURPLE, PALLETE, ENTITY_PALLETE, compute_seat_weat, compute_same, normalize_embedding
 import os 
 import json
 import matplotlib.pyplot as plt
