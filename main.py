@@ -9,9 +9,9 @@ def main():
     model_name = sys.argv[1]
     
     commands = [
-        f"python .\\src\\eval_norms.py {model_name}",
-        f"python .\\src\\eval_association.py {model_name}",
-        f"python .\\src\\eval_clustering.py {model_name}"
+        f"python src/eval_norms.py {model_name}",
+        f"python src/eval_association.py {model_name}",
+        f"python src/eval_clustering.py {model_name}"
     ]
     
     for cmd in commands:
