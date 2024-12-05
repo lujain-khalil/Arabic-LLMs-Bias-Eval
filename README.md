@@ -45,6 +45,14 @@ To extend the framework to more models, change the ```SUPPORTED_MODELS``` variab
 |:------------------------------:|:------------------------------:|:------------------------------:|
 | SEAT scores                   | WEAT association scores                    | WEAT scores                    |
 
+### Clustering Results for MARBERT
+| ![Image 1](https://github.com/lujain-khalil/MLR503-Project/blob/main/Figures/MARBERT/Clustering/MARBERT%20kmeans_clusters.png) | ![Image 2](https://github.com/lujain-khalil/MLR503-Project/blob/main/Figures/MARBERT/Clustering/MARBERT%20tsne_plot_culture.png) |
+|:------------------------------:|:------------------------------:|
+| K-Means Clustering (2 clusters)                    | tSNE plot (across culture)                    |
+
+| ![Image 3](https://github.com/lujain-khalil/MLR503-Project/blob/main/Figures/MARBERT/Clustering/MARBERT%20tsne_plot_culture_entity.png) | ![Image 4](https://github.com/lujain-khalil/MLR503-Project/blob/main/Figures/MARBERT/Clustering/MARBERT%20tsne_plot_entity.png) |
+|:------------------------------:|:------------------------------:|
+| tSNE plot (across culture-entity)                     | tSNE plot (across entity)                    |
 
 
 
