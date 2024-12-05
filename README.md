@@ -37,11 +37,11 @@ To extend the framework to more models, change the ```SUPPORTED_MODELS``` variab
 ## Sample of results
 
 ### Association Results for MARBERT
-| ![Image 1]([path/to/image1.png](https://github.com/lujain-khalil/MLR503-Project/blob/main/Figures/MARBERT/Association/MARBERT%20same_sentences.png)) | ![Image 2]([path/to/image2.png](https://github.com/lujain-khalil/MLR503-Project/blob/main/Figures/MARBERT/Association/MARBERT%20same_terms.png)) | ![Image 3]([path/to/image3.png](https://github.com/lujain-khalil/MLR503-Project/blob/main/Figures/MARBERT/Association/MARBERT%20seat_association_scores.png)) |
+| ![Image 1](https://github.com/lujain-khalil/MLR503-Project/blob/main/Figures/MARBERT/Association/MARBERT%20same_sentences.png) | ![Image 2](https://github.com/lujain-khalil/MLR503-Project/blob/main/Figures/MARBERT/Association/MARBERT%20same_terms.png) | ![Image 3](https://github.com/lujain-khalil/MLR503-Project/blob/main/Figures/MARBERT/Association/MARBERT%20seat_association_scores.png) |
 |:------------------------------:|:------------------------------:|:------------------------------:|
 | SAME score for sentences                     | SAME score for terms                     | SEAT association score                     |
 
-| ![Image 4]([path/to/image4.png](https://github.com/lujain-khalil/MLR503-Project/blob/main/Figures/MARBERT/Association/MARBERT%20seat_scores.png)) | ![Image 5]([path/to/image5.png](https://github.com/lujain-khalil/MLR503-Project/blob/main/Figures/MARBERT/Association/MARBERT%20weat_association_scores.png)) | ![Image 6]([path/to/image6.png](https://github.com/lujain-khalil/MLR503-Project/blob/main/Figures/MARBERT/Association/MARBERT%20weat_scores.png)) |
+| ![Image 4](https://github.com/lujain-khalil/MLR503-Project/blob/main/Figures/MARBERT/Association/MARBERT%20seat_scores.png) | ![Image 5](https://github.com/lujain-khalil/MLR503-Project/blob/main/Figures/MARBERT/Association/MARBERT%20weat_association_scores.png) | ![Image 6](https://github.com/lujain-khalil/MLR503-Project/blob/main/Figures/MARBERT/Association/MARBERT%20weat_scores.png) |
 |:------------------------------:|:------------------------------:|:------------------------------:|
 | SEAT scores                   | WEAT association scores                    | WEAT scores                    |
 
