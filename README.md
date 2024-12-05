@@ -9,7 +9,30 @@ We also include the results included in the paper, as generated through the code
 
 ## Introduction
 
-## Methodology
+## How to use our code:
+1. To extract embeddings from a specific model, run ```python src/extract_embeddings.py model_name```
+2. To run all evaluation scripts for a specific model, run ```python main.py model_name```
+3. To run a specific evaluation script (```eval_clustering.py```, ```eval_norms.py```, or ```eval_association.py```), run ```python src/eval_clustering.py model_name```
+4. To compare association scores across models, run ```python src/model_comparision.py```
+
+Note: The models that are currently supported are as follows:
+
+```python
+SUPPORTED_MODELS = {
+    "xlm-roberta-base": "xlm-roberta-base",
+    "mbert": "bert-base-multilingual-cased",
+    "distilbert": "distilbert/distilbert-base-multilingual-cased",
+    "bert":"google-bert/bert-base-multilingual-uncased",
+    "xlm-roberta-large": "xlm-roberta-large",
+
+    "arabert": "aubmindlab/bert-base-arabertv2",  
+    "arabertlarge":"aubmindlab/bert-large-arabertv02",
+    "marbert": "UBC-NLP/MARBERTv2",
+    "arbert": "UBC-NLP/ARBERTv2", 
+    "camelbert": "CAMeL-Lab/bert-base-arabic-camelbert-mix",
+}
+```
+To extend the framework to more models, change the ```SUPPORTED_MODELS``` variable found in ```src/utils.py```. You are encouraged to do this if you would like to extend the framework beyond what is already being presented in the study. 
 
 
 
