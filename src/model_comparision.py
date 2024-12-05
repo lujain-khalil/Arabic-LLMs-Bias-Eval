@@ -25,7 +25,7 @@ def bar_plot(data, score):
         ax.bar_label(container, fmt='%.3f', padding=3)
     
     monolingual_count = MODEL_COUNT/2
-    ax.axvline(x=monolingual_count - 0.5, color='red', linestyle='--', linewidth=1)
+    ax.axvline(x=monolingual_count - 0.5, color='grey', linestyle='--', linewidth=1)
 
     # Label the halves of the plot
     ax.text(monolingual_count // 2, ax.get_ylim()[1] * 0.95, "Monolingual", ha='center', va='center', fontsize=14, color='grey')
