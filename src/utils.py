@@ -59,6 +59,8 @@ CULTURE_ENTITY_PALLETE = {
     "Western-sports clubs": "#0d7a86"   # Darker Cyan
 }
 
+MODEL_PALETTE = {"monolingual": "#1f77b4", "multilingual": "#ff7f0e"}
+
 # Embedding Function
 def get_embedding(sentence, model_name):
     if model_name not in SUPPORTED_MODELS:
