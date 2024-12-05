@@ -35,6 +35,7 @@ SUPPORTED_MODELS = {
 To extend the framework to more models, change the ```SUPPORTED_MODELS``` variable found in ```src/utils.py```. You are encouraged to do this if you would like to extend the framework beyond what is already being presented in the study. 
 
 ## Sample of results
+If you run the above code for any of the models, you will get the following figures generated once. In the below example, we will be working with ```marbert```. The code to do this would be ```python main.py marbert```
 
 ### Association Results for MARBERT
 | ![Image 1](https://github.com/lujain-khalil/MLR503-Project/blob/main/Figures/MARBERT/Association/MARBERT%20same_sentences.png) | ![Image 2](https://github.com/lujain-khalil/MLR503-Project/blob/main/Figures/MARBERT/Association/MARBERT%20same_terms.png) | ![Image 3](https://github.com/lujain-khalil/MLR503-Project/blob/main/Figures/MARBERT/Association/MARBERT%20seat_association_scores.png) |
@@ -55,6 +56,16 @@ To extend the framework to more models, change the ```SUPPORTED_MODELS``` variab
 | tSNE plot (across culture-entity)                     | tSNE plot (across entity)                    |
 
 
+### Norms for MARBERT
+| ![Image 1](https://github.com/lujain-khalil/MLR503-Project/blob/main/Figures/MARBERT/Norms/MARBERT%20boxplot_norms.png) | ![Image 2](https://github.com/lujain-khalil/MLR503-Project/blob/main/Figures/MARBERT/Norms/MARBERT%20cdf_norms.png) | ![Image 3](https://github.com/lujain-khalil/MLR503-Project/blob/main/Figures/MARBERT/Norms/MARBERT%20culture_entity_comparison.png) |
+|:------------------------------:|:------------------------------:|:------------------------------:|
+| Box-plot of norms                     | CDF norms                   | Norms by culture and entity                     |
+
+| ![Image 4](https://github.com/lujain-khalil/MLR503-Project/blob/main/Figures/MARBERT/Norms/MARBERT%20histogram_kde_norms.png) | ![Image 5](https://github.com/lujain-khalil/MLR503-Project/blob/main/Figures/MARBERT/Norms/MARBERT%20violin_plot_norms.png) |
+|:------------------------------:|:------------------------------:|
+| Distribution histogram                    | Violin plot                   |
+
+Keep in mind that running the above does not only generate these plots, but it also saves relevant metrics and information as ```.json``` files as well. The above is just a sample of what you can expect from running the code.
 
 ## Citation and reaching out
 If you have found our work useful for your own research, we encourage you to cite us with the below (the paper has not been published yet, we will update this as necessary): 
