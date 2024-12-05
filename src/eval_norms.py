@@ -41,10 +41,6 @@ mean_std_values = {
 
 result_data = {'mean_std_values': mean_std_values}
 
-# Print the results
-print(f"Arab Mean Norm: {arab_mean_norm}, Western Mean Norm: {western_mean_norm}")
-print(f"Arab Std Norm: {arab_std_norm}, Western Std Norm: {western_std_norm}")
-
 # Prepare data for boxplot, violin plot, and histogram
 norms_df = pd.DataFrame({
     'Culture': ['Arab'] * len(arab_norms) + ['Western'] * len(western_norms),
@@ -107,7 +103,9 @@ with open(f"{results_dir}mean_std_values.json", 'w') as json_file:
     json.dump(result_data, json_file, indent=4)
 
 plt.figure(figsize=(15, 6))
-sns.barplot(data=culture_entity_stats, x='entity', y='mean', hue='culture', palette=PALLETE)
+barplot = sns.barplot(data=culture_entity_stats, x='entity', y='mean', hue='culture', palette=PALLETE)
+for container in barplot.containers:
+    barplot.bar_label(container, fmt='%.2f', padding=3)
 plt.title(f'Mean Embedding Norms by Culture and Entity ({MODEL_NAME})')
 plt.xlabel('Entity')
 plt.ylabel('Mean Norm')
@@ -121,7 +119,7 @@ arab_normality = check_normality(arab_norms)
 western_normality = check_normality(western_norms)
 
 # Perform statistical test based on normality results
-statistical_results = perform_statistical_test(arab_norms, western_norms, arab_normality)
+statistical_results = perform_statistical_test(arab_norms, western_norms, arab_normality, western_normality)
 
 # Combine all results
 results = {
