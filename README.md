@@ -76,7 +76,7 @@ If you have found our work useful for your own research, we encourage you to cit
 ```
 @Article{dates-over-donuts,
 AUTHOR = {Khalil, Lujain and Varam, Dara and Bayoumy, Arwa and Aklson, Alex},
-TITLE = {Dates Over Donuts: Measuring Embeddings Biases Across Arabic and Western Terms},
+TITLE = {Dates Over Donuts: Measuring Embedding Biases Across Arabic and Western Terms},
 JOURNAL = { },
 VOLUME = {},
 YEAR = {},
