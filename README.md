@@ -5,7 +5,7 @@ This repository contains the necessary code to run and replicate results for our
 
 We also include the paper results, as generated through the code. A small tutorial on running experiments is also included for the viewer's convenience. 
 
-![alt text](https://github.com/lujain-khalil/MLR503-Project/blob/main/Figures/MLR503%20System%20Overview.png)
+![alt text](https://github.com/lujain-khalil/Arabic-LLMs-Bias-Eval/blob/main/Figures/L%20Khalil%20-%20System%20Overview.png)
 
 ## Introduction
 
