@@ -1,9 +1,9 @@
-# Measuring Bias in Contextual Embeddings Across Arabic and Western Terms
-_Lujain Khalil, Dara Varam, Arwa Bayoumy and Dr. Alex Aklson_
+# Exploring Cultural Biases of Arabic-Speaking Large Language Models: A Word Embedding Perspective
+_Lujain Khalil, Arwa Bayoumy, Dara Varam, and Dr. Alex Aklson_
 
 This repository contains the necessary code to run and replicate results for our paper, titled "Dates Over Donuts: Measuring Embedding Biases Across Arabic and Western Terms."
 
-We also include the results included in the paper, as generated through the code. A small tutorial on running experiments is also included for the viewer's convenience. 
+We also include the paper results, as generated through the code. A small tutorial on running experiments is also included for the viewer's convenience. 
 
 ![alt text](https://github.com/lujain-khalil/MLR503-Project/blob/main/Figures/MLR503%20System%20Overview.png)
 
@@ -74,9 +74,9 @@ If you have found our work useful for your own research, we encourage you to cit
 
 
 ```
-@Article{dates-over-donuts,
-AUTHOR = {Khalil, Lujain and Varam, Dara and Bayoumy, Arwa and Aklson, Alex},
-TITLE = {Dates Over Donuts: Measuring Embedding Biases Across Arabic and Western Terms},
+@Article{khalil2025culturalbiasllm,
+AUTHOR = {Khalil, Lujain and Bayoumy, Arwa and Varam, Dara and Aklson, Alex},
+TITLE = {Exploring Cultural Biases of Arabic-Speaking Large Language Models: A Word Embedding Perspective},
 JOURNAL = { },
 VOLUME = {},
 YEAR = {},
@@ -89,4 +89,4 @@ DOI = {}
 }
 ```
 
-You are also welcome to reach out through email (g00082632@alumni.aus.edu - Lujain Khalil or b00081313@alumni.aus.edu - Dara Varam)
+You are also welcome to reach out through email (g00082632@alumni.aus.edu - Lujain Khalil, g00082596@alumni.aus.edu - Arwa Bayoumy, or b00081313@alumni.aus.edu - Dara Varam)
