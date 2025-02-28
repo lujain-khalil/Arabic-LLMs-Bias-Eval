@@ -8,7 +8,7 @@ import os
 import json
 
 parser = argparse.ArgumentParser(description="Evaluate embeddings using a specified multilingual masked LLM.")
-parser.add_argument('model_name', type=str, choices=SUPPORTED_MODELS.keys(), help="Name of the model to use (e.g., 'xlm-roberta-base', 'mbert', 'gigabert')")
+parser.add_argument('model_name', type=str, help="Name of the model to use (e.g., 'xlm-roberta-base', 'mbert', 'gigabert')")
 
 args = parser.parse_args()
 MODEL_NAME = args.model_name
@@ -16,6 +16,10 @@ MODEL_NAME = args.model_name
 results_dir = f"results/{MODEL_NAME}/norms/"
 if not os.path.exists(results_dir):
     os.makedirs(results_dir)
+
+eps_dir = f"results/{MODEL_NAME}/association/eps"
+if not os.path.exists(eps_dir):
+    os.makedirs(eps_dir)
 
 # Load the generated embeddings for cultural terms
 embeddings_df = pd.read_pickle(f"embeddings/{MODEL_NAME}/culture_term_embeddings.pkl")
@@ -49,46 +53,41 @@ norms_df = pd.DataFrame({
 
 # Boxplot
 plt.figure(figsize=(8, 6))
-sns.boxplot(data=norms_df, x='Culture', y='Norm', hue='Culture', legend=False, palette=PALLETE)
-plt.title(f'Distribution of Norms: Arab vs Western Terms ({MODEL_NAME})')
-plt.xlabel('Cultural Group')
-plt.ylabel('Embedding Norm')
+sns.boxplot(data=norms_df, x='Culture', y='Norm', hue='Culture', palette=PALLETE)
+plt.title(f'Distribution of Norms: Arab vs Western Terms ({MODEL_NAME})', fontsize=16)
+plt.xlabel('Cultural Group', fontsize=14)
+plt.ylabel('Embedding Norm', fontsize=14)
+plt.legend(title="Culture", fontsize=12, title_fontsize=14)
 plt.tight_layout()
 plt.savefig(f"{results_dir}boxplot_norms.png")
+eps_path = os.path.join(eps_dir, "boxplot_norms.eps")
+plt.savefig(eps_path, format='eps')
 plt.close()
 
 # Violin Plot
 plt.figure(figsize=(8, 6))
-sns.violinplot(data=norms_df, x='Culture', y='Norm', hue='Culture', legend=False, palette=PALLETE)
-plt.title(f'Distribution of Norms: Arab vs Western Terms ({MODEL_NAME})')
-plt.xlabel('Cultural Group')
-plt.ylabel('Embedding Norm')
+sns.violinplot(data=norms_df, x='Culture', y='Norm', hue='Culture', palette=PALLETE)
+plt.title(f'Distribution of Norms: Arab vs Western Terms ({MODEL_NAME})', fontsize=16)
+plt.xlabel('Cultural Group', fontsize=14)
+plt.ylabel('Embedding Norm', fontsize=14)
 plt.tight_layout()
 plt.savefig(f"{results_dir}violin_plot_norms.png")
+eps_path = os.path.join(eps_dir, "violin_plot_norms.eps")
+plt.savefig(eps_path, format='eps')
 plt.close()
 
 # Histogram with KDE
 plt.figure(figsize=(8, 6))
 sns.histplot(arab_norms, kde=True, color=GREEN, label='Arab', stat='density', bins=20, alpha=0.5)
 sns.histplot(western_norms, kde=True, color=PURPLE, label='Western', stat='density', bins=20, alpha=0.5)
-plt.title(f'Norm Distribution with KDE: Arab vs Western Terms ({MODEL_NAME})')
-plt.xlabel('Embedding Norm')
-plt.ylabel('Density')
+plt.title(f'Norm Distribution with KDE: Arab vs Western Terms ({MODEL_NAME})', fontsize=16)
+plt.xlabel('Embedding Norm', fontsize=14)
+plt.ylabel('Density', fontsize=14)
 plt.legend()
 plt.tight_layout()
 plt.savefig(f"{results_dir}histogram_kde_norms.png")
-plt.close()
-
-# CDF Plot
-plt.figure(figsize=(8, 6))
-sns.ecdfplot(arab_norms, color=GREEN, label='Arab', linewidth=2)
-sns.ecdfplot(western_norms, color=PURPLE, label='Western', linewidth=2)
-plt.title(f'CDF of Norms: Arab vs Western Terms {MODEL_NAME}')
-plt.xlabel('Embedding Norm')
-plt.ylabel('CDF')
-plt.legend()
-plt.tight_layout()
-plt.savefig(f"{results_dir}cdf_norms.png")
+eps_path = os.path.join(eps_dir, "histogram_kde_norms.eps")
+plt.savefig(eps_path, format='eps')
 plt.close()
 
 # Comparision of cultural entities
@@ -102,15 +101,18 @@ result_data['culture_entity_stats'] = culture_entity_stats.to_dict(orient='recor
 with open(f"{results_dir}mean_std_values.json", 'w') as json_file:
     json.dump(result_data, json_file, indent=4)
 
+# Barplot
 plt.figure(figsize=(15, 6))
 barplot = sns.barplot(data=culture_entity_stats, x='entity', y='mean', hue='culture', palette=PALLETE)
 for container in barplot.containers:
     barplot.bar_label(container, fmt='%.2f', padding=3)
-plt.title(f'Mean Embedding Norms by Culture and Entity ({MODEL_NAME})')
-plt.xlabel('Entity')
-plt.ylabel('Mean Norm')
+plt.title(f'Mean Embedding Norms by Culture and Entity ({MODEL_NAME})', fontsize=16)
+plt.xlabel('Entity', fontsize=14)
+plt.ylabel('Mean Norm', fontsize=14)
 plt.tight_layout()
 plt.savefig(f"{results_dir}culture_entity_comparison.png")
+eps_path = os.path.join(eps_dir, "culture_entity_comparison.eps")
+plt.savefig(eps_path, format='eps')
 
 print(f"All visualizations for {MODEL_NAME} have been saved in '{results_dir}' directory.")
 

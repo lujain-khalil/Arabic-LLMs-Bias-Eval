@@ -1,13 +1,19 @@
 import subprocess
 import sys
+from src.utils import SUPPORTED_MODELS
 
 def main():
     if len(sys.argv) != 2:
         print("Usage: python main.py <model_name>")
         sys.exit(1)
 
-    model_name = sys.argv[1]
+    model_name_input = sys.argv[1]
+    model_name = next((k for k in SUPPORTED_MODELS.keys() if k.lower() == model_name_input.lower()), None)
     
+    if model_name is None:
+        print(f"{model_name_input} not in {list(SUPPORTED_MODELS.keys())}")
+        sys.exit(1)
+
     commands = [
         f"python src/eval_norms.py {model_name}",
         f"python src/eval_association.py {model_name}",

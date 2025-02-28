@@ -5,19 +5,22 @@ import scipy.stats as stats
 from scipy.spatial.distance import cdist, cosine
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os 
 
 SUPPORTED_MODELS = {
-    "xlm-roberta-base": "xlm-roberta-base",
-    "mbert": "bert-base-multilingual-cased",
-    "distilbert": "distilbert/distilbert-base-multilingual-cased",
-    "bert":"google-bert/bert-base-multilingual-uncased",
-    "xlm-roberta-large": "xlm-roberta-large",
+    # Multiligual
+    "BERT":"google-bert/bert-base-multilingual-uncased",
+    "mBERT": "bert-base-multilingual-cased",
+    "DistilBERT": "distilbert/distilbert-base-multilingual-cased",
+    "XLM-RoBERTa-Base": "xlm-roberta-base",
+    "XLM-RoBERTa-Large": "xlm-roberta-large",
 
-    "arabert": "aubmindlab/bert-base-arabertv2",  
-    "arabertlarge":"aubmindlab/bert-large-arabertv02",
-    "marbert": "UBC-NLP/MARBERTv2",
-    "arbert": "UBC-NLP/ARBERTv2", 
-    "camelbert": "CAMeL-Lab/bert-base-arabic-camelbert-mix",
+    # Monolingual
+    "AraBERT": "aubmindlab/bert-base-arabertv2",  
+    "AraBERT-Large":"aubmindlab/bert-large-arabertv02",
+    "ARBERT": "UBC-NLP/ARBERTv2", 
+    "CAMeLBERT": "CAMeL-Lab/bert-base-arabic-camelbert-mix",
+    "MARBERT": "UBC-NLP/MARBERTv2",
 }
 
 GREEN = '#90c926'  
@@ -154,7 +157,7 @@ def compute_cluster_distances(embeddings, labels, group_label):
 
     return np.mean(intra_cluster_distances), np.mean(inter_cluster_distances)
 
-def scatter_plot(df, column, title, save_path, palette = 'flare'):
+def scatter_plot(df, column, title, save_path, eps_dir, palette = 'flare'):
     plt.figure(figsize=(12, 10))
     sns.scatterplot(
         x='t-SNE 1',
@@ -174,9 +177,14 @@ def scatter_plot(df, column, title, save_path, palette = 'flare'):
             color='black',
             bbox=dict(facecolor='white', edgecolor='black', boxstyle='round,pad=0.3')
         )
-    plt.title(title)
+    plt.title(title, fontsize=16)
+    plt.xlabel("t-SNE 1", fontsize=14)
+    plt.ylabel("t-SNE 2", fontsize=14)
     plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
     plt.tight_layout()
+    plt.savefig(save_path)
+    eps_filename = os.path.join(eps_dir, os.path.basename(save_path).replace('.png', '.eps'))
+    plt.savefig(eps_filename, format='eps')
     plt.savefig(save_path)
 
 def map_labels(labels, df):

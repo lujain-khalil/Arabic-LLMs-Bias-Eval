@@ -9,7 +9,7 @@ import json
 from utils import SUPPORTED_MODELS, PALLETE, ENTITY_PALLETE, CULTURE_ENTITY_PALLETE, compute_cluster_distances, scatter_plot, map_labels
 
 parser = argparse.ArgumentParser(description="Evaluate embeddings using a specified multilingual masked LLM.")
-parser.add_argument('model_name', type=str, choices=SUPPORTED_MODELS.keys(), help="Name of the model to use (e.g., 'xlm-roberta-base', 'mbert', 'gigabert')")
+parser.add_argument('model_name', type=str, help="Name of the model to use (e.g., 'xlm-roberta-base', 'mbert', 'gigabert')")
 
 args = parser.parse_args()
 MODEL_NAME = args.model_name
@@ -17,6 +17,10 @@ MODEL_NAME = args.model_name
 results_dir = f"results/{MODEL_NAME}/clustering/"
 if not os.path.exists(results_dir):
     os.makedirs(results_dir)
+
+eps_dir = f"results/{MODEL_NAME}/association/eps"
+if not os.path.exists(eps_dir):
+    os.makedirs(eps_dir)
 
 embeddings_df = pd.read_pickle(f"embeddings/{MODEL_NAME}/culture_term_embeddings.pkl")
 
@@ -51,7 +55,6 @@ tsne_df['Culture-Entity'] = [f"{label[0]}-{label[1]}" for label in all_labels]
 print("Running K-Means Clustering by Culture...")
 kmeans = KMeans(n_clusters=2, random_state=42, n_init='auto')
 cluster_labels = kmeans.fit_predict(all_embeddings)
-tsne_df['KMeans_Cluster'] = map_labels(cluster_labels, tsne_df)
 
 # Silhouette score, Intra-Cluster and Inter-Cluster Distances
 silhouette_avg = silhouette_score(all_embeddings, cluster_labels)
@@ -60,10 +63,9 @@ intra_culture_entity, inter_culture_entity = compute_cluster_distances(all_embed
 
 # Plots
 print(f"Generating plots...")
-scatter_plot(tsne_df, 'Culture', f't-SNE Visualization: Grouped by Culture ({MODEL_NAME})', f"{results_dir}tsne_plot_culture.png", PALLETE)
-scatter_plot(tsne_df, 'Entity', f't-SNE Visualization: Grouped by Entity ({MODEL_NAME})', f"{results_dir}tsne_plot_entity.png", ENTITY_PALLETE)
-scatter_plot(tsne_df, 'Culture-Entity', f't-SNE Visualization: Grouped by Culture-Entity ({MODEL_NAME})', f"{results_dir}tsne_plot_culture_entity.png", CULTURE_ENTITY_PALLETE)
-scatter_plot(tsne_df, 'KMeans_Cluster', f'K-Means Clustering Results ({MODEL_NAME})', f"{results_dir}kmeans_clusters.png", PALLETE)
+scatter_plot(tsne_df, 'Culture', f't-SNE Visualization: Grouped by Culture ({MODEL_NAME})', f"{results_dir}tsne_plot_culture.png", eps_dir, PALLETE)
+scatter_plot(tsne_df, 'Entity', f't-SNE Visualization: Grouped by Entity ({MODEL_NAME})', f"{results_dir}tsne_plot_entity.png", eps_dir, ENTITY_PALLETE)
+scatter_plot(tsne_df, 'Culture-Entity', f't-SNE Visualization: Grouped by Culture-Entity ({MODEL_NAME})', f"{results_dir}tsne_plot_culture_entity.png", eps_dir, CULTURE_ENTITY_PALLETE)
 
 # Save results
 print(f"Saving results...")
