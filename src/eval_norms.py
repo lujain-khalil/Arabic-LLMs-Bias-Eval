@@ -7,6 +7,8 @@ from utils import LANGUAGE, GREEN, PURPLE, PALLETE, compute_norm, check_normalit
 import os 
 import json
 
+plt.rcParams.update({'xtick.labelsize': 12, 'ytick.labelsize': 12})
+
 parser = argparse.ArgumentParser(description="Evaluate embeddings using a specified multilingual masked LLM.")
 parser.add_argument('model_name', type=str, help="Name of the model to use (e.g., 'xlm-roberta-base', 'mbert', 'gigabert')")
 
@@ -54,11 +56,13 @@ norms_df = pd.DataFrame({
 })
 
 print('Generating plots...')
+FIG_SIZE = (6,5)
+
 # Boxplot
-plt.figure(figsize=(10, 6))
+plt.figure(figsize=FIG_SIZE)
 sns.boxplot(data=norms_df, x='Culture', y='Norm', hue='Culture', palette=PALLETE)
-plt.title(f'Distribution of Norms: Arab vs Western Terms ({MODEL_NAME})', fontsize=16)
-plt.xlabel('Cultural Group', fontsize=14)
+plt.title(f'Box Plot Distribution of Norms ({MODEL_NAME})', fontsize=18)
+plt.xlabel('', fontsize=1)
 plt.ylabel('Embedding Norm', fontsize=14)
 plt.tight_layout()
 plt.savefig(f"{results_dir}boxplot_norms.png")
@@ -67,10 +71,10 @@ plt.savefig(eps_path, format='eps')
 plt.close()
 
 # Violin Plot
-plt.figure(figsize=(10, 6))
+plt.figure(figsize=FIG_SIZE)
 sns.violinplot(data=norms_df, x='Culture', y='Norm', hue='Culture', palette=PALLETE)
-plt.title(f'Distribution of Norms: Arab vs Western Terms ({MODEL_NAME})', fontsize=16)
-plt.xlabel('Cultural Group', fontsize=14)
+plt.title(f'Violin Plot Distribution of Norms ({MODEL_NAME})', fontsize=18)
+plt.xlabel('', fontsize=1)
 plt.ylabel('Embedding Norm', fontsize=14)
 plt.tight_layout()
 plt.savefig(f"{results_dir}violin_plot_norms.png")
@@ -79,11 +83,11 @@ plt.savefig(eps_path, format='eps')
 plt.close()
 
 # Histogram with KDE
-plt.figure(figsize=(10, 6))
+plt.figure(figsize=FIG_SIZE)
 sns.histplot(arab_norms, kde=True, color=GREEN, label='Arab', stat='density', bins=20, alpha=0.5)
 sns.histplot(western_norms, kde=True, color=PURPLE, label='Western', stat='density', bins=20, alpha=0.5)
-plt.title(f'Norm Distribution with KDE: Arab vs Western Terms ({MODEL_NAME})', fontsize=16)
-plt.xlabel('Embedding Norm', fontsize=14)
+plt.title(f'Norm Distribution with KDE ({MODEL_NAME})', fontsize=18)
+plt.xlabel('', fontsize=1)
 plt.ylabel('Density', fontsize=14)
 plt.legend(title="Culture", fontsize=12, title_fontsize=14)
 plt.tight_layout()
@@ -108,8 +112,8 @@ plt.figure(figsize=(15, 6))
 barplot = sns.barplot(data=culture_entity_stats, x='entity', y='mean', hue='culture', palette=PALLETE)
 for container in barplot.containers:
     barplot.bar_label(container, fmt='%.2f', padding=3)
-plt.title(f'Mean Embedding Norms by Culture and Entity ({MODEL_NAME})', fontsize=16)
-plt.xlabel('Entity', fontsize=14)
+plt.title(f'Mean Embedding Norms by Culture and Entity ({MODEL_NAME})', fontsize=18)
+plt.xlabel('', fontsize=1)
 plt.ylabel('Mean Norm', fontsize=14)
 plt.legend(title='Culture', fontsize=12, title_fontsize=14)
 plt.tight_layout()

@@ -80,11 +80,11 @@ with open(f"{results_dir}asssociation_metrics_results.json", 'w') as f:
     json.dump(combined_results, f, indent=4)
 
 # ------------ Generating plots ------------
-
+FIG_SIZE = (12, 6)
 def bar_plot(data, score, y_lim=None):
     df = pd.DataFrame({'Category': data.keys(), 'Score': data.values()})
     
-    plt.figure(figsize=(15, 6))
+    plt.figure(figsize=FIG_SIZE)
     temp_pallete = ENTITY_PALLETE
     temp_pallete[f'Total {score}'] = PURPLE
     ax = sns.barplot(x='Category', y='Score', data=df, hue='Category', palette=temp_pallete)
@@ -93,13 +93,14 @@ def bar_plot(data, score, y_lim=None):
         headroom = (y_lim[1] - y_lim[0]) * 0.05
         ax.set_ylim(y_lim[0] - headroom, y_lim[1] + headroom)
 
-    ax.set_title(f"{score} for Cultural Terms ({MODEL_NAME})", fontsize=16)
+    ax.set_title(f"{score} for Cultural Terms ({MODEL_NAME})", fontsize=20)
     ax.set_ylabel(f"{score} Score", fontsize=14)
-    ax.set_xlabel(f"Entity Type", fontsize=14)
-    
+    ax.set_xlabel("", fontsize=1)
+
     for container in ax.containers:
         ax.bar_label(container, fmt='%.3f', padding=3)
-    
+    plt.setp(ax.get_xticklabels(), rotation=45)
+
     plt.tight_layout()
     plt.savefig(f"{results_dir}{score.lower()}_scores.png")
     eps_path = os.path.join(eps_dir, f"{score.lower()}_scores.eps")
@@ -115,7 +116,7 @@ def grouped_bar_plot(data, target, y_lim=None):
                 "Culture": culture
             })
 
-    plt.figure(figsize=(15, 6))
+    plt.figure(figsize=FIG_SIZE)
     barplot = sns.barplot(data=pd.DataFrame(tidy_data), x='Entity', y='SAME', hue='Culture', palette=PALLETE)
 
     if y_lim is not None:
@@ -124,11 +125,12 @@ def grouped_bar_plot(data, target, y_lim=None):
     
     for container in barplot.containers:
         barplot.bar_label(container, fmt='%.3f', padding=3)
+    plt.setp(barplot.get_xticklabels(), rotation=45)
 
-    plt.title(f"SAME for Cultural {target} ({MODEL_NAME})", fontsize=16)
+    plt.title(f"SAME for Cultural {target} ({MODEL_NAME})", fontsize=20)
     plt.ylabel("SAME Score", fontsize=14)
-    plt.xlabel(f"Entity Type", fontsize=14)
-
+    plt.xlabel("", fontsize=1)
+    
     plt.legend(title="Culture", fontsize=12, title_fontsize=14)
     plt.tight_layout()
     plt.savefig(f"{results_dir}same_{target.lower()}.png")

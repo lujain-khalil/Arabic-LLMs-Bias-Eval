@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from utils import LANGUAGE, PALLETE, ENTITY_PALLETE, CULTURE_ENTITY_PALLETE, compute_cluster_distances, map_labels
 
+
 parser = argparse.ArgumentParser(description="Evaluate embeddings using a specified multilingual masked LLM.")
 parser.add_argument('model_name', type=str, help="Name of the model to use (e.g., 'xlm-roberta-base', 'mbert', 'gigabert')")
 
@@ -67,9 +68,10 @@ intra_culture_entity, inter_culture_entity = compute_cluster_distances(all_embed
 
 # Plots
 print(f"Generating plots...")
+FIG_SIZE=(6,5)
 
 def scatter_plot(df, column, save_path, eps_dir, palette = 'flare'):
-    plt.figure(figsize=(10, 10))
+    plt.figure(figsize=FIG_SIZE)
     sns.scatterplot(
         x='t-SNE 1',
         y='t-SNE 2',
@@ -77,6 +79,7 @@ def scatter_plot(df, column, save_path, eps_dir, palette = 'flare'):
         data=df,
         palette=palette,
         s=100,
+        legend=False
     )
     cluster_centroids = df.groupby(column)[['t-SNE 1', 't-SNE 2']].mean()
     for cluster_name, (x, y) in cluster_centroids.iterrows():
@@ -84,16 +87,16 @@ def scatter_plot(df, column, save_path, eps_dir, palette = 'flare'):
             x, y, str(cluster_name),
             horizontalalignment='center',
             verticalalignment='center',
-            fontsize=12,
+            # fontsize=12,
             color='black',
             bbox=dict(facecolor='white', edgecolor='black', boxstyle='round,pad=0.3')
         )
-    plt.title(f't-SNE Visualization: Grouped by {column} ({MODEL_NAME})', fontsize=16)
+    plt.title(f't-SNE by {column} ({MODEL_NAME})', fontsize=18)
     plt.xlabel("t-SNE 1", fontsize=14)
     plt.ylabel("t-SNE 2", fontsize=14)
 
     # plt.legend(title=column, bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0., fontsize=12, title_fontsize=14)
-    plt.legend(title=column, loc='upper right', fontsize=12, title_fontsize=14)
+    # plt.legend(title=column, loc='upper right', fontsize=12, title_fontsize=14)
     plt.tight_layout()
     plt.savefig(save_path)
     eps_filename = os.path.join(eps_dir, os.path.basename(save_path).replace('.png', '.eps'))
