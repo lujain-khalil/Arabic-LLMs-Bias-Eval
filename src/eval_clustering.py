@@ -16,7 +16,7 @@ parser.add_argument('model_name', type=str, help="Name of the model to use (e.g.
 args = parser.parse_args()
 MODEL_NAME = args.model_name
 
-lang_type = "monolingual" if MODEL_NAME in LANGUAGE["monolingual"] else "multilingual"
+lang_type = "monolingual" if (MODEL_NAME in LANGUAGE["monolingual"]) else "multilingual"
 results_dir = f"results/{lang_type}/{MODEL_NAME}/clustering/"
 
 if not os.path.exists(results_dir):
@@ -68,8 +68,8 @@ intra_culture_entity, inter_culture_entity = compute_cluster_distances(all_embed
 # Plots
 print(f"Generating plots...")
 
-def scatter_plot(df, column, title, save_path, eps_dir, palette = 'flare'):
-    plt.figure(figsize=(12, 10))
+def scatter_plot(df, column, save_path, eps_dir, palette = 'flare'):
+    plt.figure(figsize=(10, 10))
     sns.scatterplot(
         x='t-SNE 1',
         y='t-SNE 2',
@@ -84,23 +84,25 @@ def scatter_plot(df, column, title, save_path, eps_dir, palette = 'flare'):
             x, y, str(cluster_name),
             horizontalalignment='center',
             verticalalignment='center',
-            fontsize=10,
+            fontsize=12,
             color='black',
             bbox=dict(facecolor='white', edgecolor='black', boxstyle='round,pad=0.3')
         )
-    plt.title(title, fontsize=16)
+    plt.title(f't-SNE Visualization: Grouped by {column} ({MODEL_NAME})', fontsize=16)
     plt.xlabel("t-SNE 1", fontsize=14)
     plt.ylabel("t-SNE 2", fontsize=14)
-    plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
+
+    # plt.legend(title=column, bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0., fontsize=12, title_fontsize=14)
+    plt.legend(title=column, loc='upper right', fontsize=12, title_fontsize=14)
     plt.tight_layout()
     plt.savefig(save_path)
     eps_filename = os.path.join(eps_dir, os.path.basename(save_path).replace('.png', '.eps'))
     plt.savefig(eps_filename, format='eps')
     plt.savefig(save_path)
 
-scatter_plot(tsne_df, 'Culture', f't-SNE Visualization: Grouped by Culture ({MODEL_NAME})', f"{results_dir}tsne_plot_culture.png", eps_dir, PALLETE)
-scatter_plot(tsne_df, 'Entity', f't-SNE Visualization: Grouped by Entity ({MODEL_NAME})', f"{results_dir}tsne_plot_entity.png", eps_dir, ENTITY_PALLETE)
-scatter_plot(tsne_df, 'Culture-Entity', f't-SNE Visualization: Grouped by Culture-Entity ({MODEL_NAME})', f"{results_dir}tsne_plot_culture_entity.png", eps_dir, CULTURE_ENTITY_PALLETE)
+scatter_plot(tsne_df, 'Culture', f"{results_dir}tsne_plot_culture.png", eps_dir, PALLETE)
+scatter_plot(tsne_df, 'Entity', f"{results_dir}tsne_plot_entity.png", eps_dir, ENTITY_PALLETE)
+scatter_plot(tsne_df, 'Culture-Entity', f"{results_dir}tsne_plot_culture_entity.png", eps_dir, CULTURE_ENTITY_PALLETE)
 
 # Save results
 print(f"Saving results...")

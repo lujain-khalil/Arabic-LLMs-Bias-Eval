@@ -21,7 +21,7 @@ SUPPORTED_MODELS = {
 }
 
 LANGUAGE = {
-    "multilinugal": ["BERT", "mBERT", "DistilBERT", "XLM-RoBERTa-Base", "XLM-RoBERTa-Large"],
+    "multilingual": ["BERT", "mBERT", "DistilBERT", "XLM-RoBERTa-Base", "XLM-RoBERTa-Large"],
     "monolingual": ["AraBERT", "AraBERT-Large", "ARBERT", "CAMeLBERT", "MARBERT"]
 }
 

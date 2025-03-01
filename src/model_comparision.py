@@ -28,7 +28,6 @@ def bar_plot(data, score, y_lim=None):
 
     ax.set_title(f"{score} for Cultural Terms Across Models", fontsize=16)
     ax.set_ylabel(f"{score} Score", fontsize=14)
-    ax.set_xlabel("Model", fontsize=14)
     
     for container in ax.containers:
         ax.bar_label(container, fmt='%.3f', padding=3)
@@ -71,7 +70,6 @@ def grouped_bar_plot(data, target, y_lim=None):
 
     plt.title(f"SAME for Cultural {target} Across Models", fontsize=16)
     plt.ylabel("SAME Score", fontsize=14)
-    plt.xlabel("Model", fontsize=14)
 
     monolingual_count = MODEL_COUNT/2
     barplot.axvline(x=monolingual_count - 0.5, color='grey', linestyle='--', linewidth=1)
@@ -122,13 +120,11 @@ with open(f"{results_dir}asssociation_metrics_model_comparision.json", 'w') as f
 
 print(f"Generating plots...")
 
-# For WEAT/SEAT plots: compute global y-limits across both metrics
 weat_scores = [v["Score"] for v in combined_results["WEAT"].values()]
 seat_scores = [v["Score"] for v in combined_results["SEAT"].values()]
 global_y_min = min(min(weat_scores), min(seat_scores))
 global_y_max = max(max(weat_scores), max(seat_scores))
 
-# For SAME plots: compute global y-limits across SAME-terms and SAME-sentences
 same_terms_scores = [score for model in combined_results["SAME-terms"].values() for score in model.values()]
 same_sentences_scores = [score for model in combined_results["SAME-sentences"].values() for score in model.values()]
 global_same_y_min = min(min(same_terms_scores), min(same_sentences_scores))
