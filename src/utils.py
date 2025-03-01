@@ -3,9 +3,6 @@ import torch
 import numpy as np
 import scipy.stats as stats
 from scipy.spatial.distance import cdist, cosine
-import matplotlib.pyplot as plt
-import seaborn as sns
-import os 
 
 SUPPORTED_MODELS = {
     # Multiligual
@@ -21,6 +18,11 @@ SUPPORTED_MODELS = {
     "ARBERT": "UBC-NLP/ARBERTv2", 
     "CAMeLBERT": "CAMeL-Lab/bert-base-arabic-camelbert-mix",
     "MARBERT": "UBC-NLP/MARBERTv2",
+}
+
+LANGUAGE = {
+    "multilinugal": ["BERT", "mBERT", "DistilBERT", "XLM-RoBERTa-Base", "XLM-RoBERTa-Large"],
+    "monolingual": ["AraBERT", "AraBERT-Large", "ARBERT", "CAMeLBERT", "MARBERT"]
 }
 
 GREEN = '#90c926'  
@@ -156,36 +158,6 @@ def compute_cluster_distances(embeddings, labels, group_label):
                 inter_cluster_distances.append(inter_distance)
 
     return np.mean(intra_cluster_distances), np.mean(inter_cluster_distances)
-
-def scatter_plot(df, column, title, save_path, eps_dir, palette = 'flare'):
-    plt.figure(figsize=(12, 10))
-    sns.scatterplot(
-        x='t-SNE 1',
-        y='t-SNE 2',
-        hue=column,
-        data=df,
-        palette=palette,
-        s=100,
-    )
-    cluster_centroids = df.groupby(column)[['t-SNE 1', 't-SNE 2']].mean()
-    for cluster_name, (x, y) in cluster_centroids.iterrows():
-        plt.text(
-            x, y, str(cluster_name),
-            horizontalalignment='center',
-            verticalalignment='center',
-            fontsize=10,
-            color='black',
-            bbox=dict(facecolor='white', edgecolor='black', boxstyle='round,pad=0.3')
-        )
-    plt.title(title, fontsize=16)
-    plt.xlabel("t-SNE 1", fontsize=14)
-    plt.ylabel("t-SNE 2", fontsize=14)
-    plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
-    plt.tight_layout()
-    plt.savefig(save_path)
-    eps_filename = os.path.join(eps_dir, os.path.basename(save_path).replace('.png', '.eps'))
-    plt.savefig(eps_filename, format='eps')
-    plt.savefig(save_path)
 
 def map_labels(labels, df):
     cluster_mapping = {}

@@ -6,7 +6,9 @@ from sklearn.metrics import silhouette_score
 import os 
 import argparse
 import json
-from utils import SUPPORTED_MODELS, PALLETE, ENTITY_PALLETE, CULTURE_ENTITY_PALLETE, compute_cluster_distances, scatter_plot, map_labels
+import matplotlib.pyplot as plt
+import seaborn as sns
+from utils import LANGUAGE, PALLETE, ENTITY_PALLETE, CULTURE_ENTITY_PALLETE, compute_cluster_distances, map_labels
 
 parser = argparse.ArgumentParser(description="Evaluate embeddings using a specified multilingual masked LLM.")
 parser.add_argument('model_name', type=str, help="Name of the model to use (e.g., 'xlm-roberta-base', 'mbert', 'gigabert')")
@@ -14,7 +16,9 @@ parser.add_argument('model_name', type=str, help="Name of the model to use (e.g.
 args = parser.parse_args()
 MODEL_NAME = args.model_name
 
-results_dir = f"results/{MODEL_NAME}/clustering/"
+lang_type = "monolingual" if MODEL_NAME in LANGUAGE["monolingual"] else "multilingual"
+results_dir = f"results/{lang_type}/{MODEL_NAME}/clustering/"
+
 if not os.path.exists(results_dir):
     os.makedirs(results_dir)
 
@@ -63,6 +67,37 @@ intra_culture_entity, inter_culture_entity = compute_cluster_distances(all_embed
 
 # Plots
 print(f"Generating plots...")
+
+def scatter_plot(df, column, title, save_path, eps_dir, palette = 'flare'):
+    plt.figure(figsize=(12, 10))
+    sns.scatterplot(
+        x='t-SNE 1',
+        y='t-SNE 2',
+        hue=column,
+        data=df,
+        palette=palette,
+        s=100,
+    )
+    cluster_centroids = df.groupby(column)[['t-SNE 1', 't-SNE 2']].mean()
+    for cluster_name, (x, y) in cluster_centroids.iterrows():
+        plt.text(
+            x, y, str(cluster_name),
+            horizontalalignment='center',
+            verticalalignment='center',
+            fontsize=10,
+            color='black',
+            bbox=dict(facecolor='white', edgecolor='black', boxstyle='round,pad=0.3')
+        )
+    plt.title(title, fontsize=16)
+    plt.xlabel("t-SNE 1", fontsize=14)
+    plt.ylabel("t-SNE 2", fontsize=14)
+    plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
+    plt.tight_layout()
+    plt.savefig(save_path)
+    eps_filename = os.path.join(eps_dir, os.path.basename(save_path).replace('.png', '.eps'))
+    plt.savefig(eps_filename, format='eps')
+    plt.savefig(save_path)
+
 scatter_plot(tsne_df, 'Culture', f't-SNE Visualization: Grouped by Culture ({MODEL_NAME})', f"{results_dir}tsne_plot_culture.png", eps_dir, PALLETE)
 scatter_plot(tsne_df, 'Entity', f't-SNE Visualization: Grouped by Entity ({MODEL_NAME})', f"{results_dir}tsne_plot_entity.png", eps_dir, ENTITY_PALLETE)
 scatter_plot(tsne_df, 'Culture-Entity', f't-SNE Visualization: Grouped by Culture-Entity ({MODEL_NAME})', f"{results_dir}tsne_plot_culture_entity.png", eps_dir, CULTURE_ENTITY_PALLETE)

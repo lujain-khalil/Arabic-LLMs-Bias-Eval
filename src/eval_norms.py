@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import argparse
-from utils import SUPPORTED_MODELS, GREEN, PURPLE, PALLETE, compute_norm, check_normality, perform_statistical_test
+from utils import LANGUAGE, GREEN, PURPLE, PALLETE, compute_norm, check_normality, perform_statistical_test
 import os 
 import json
 
@@ -13,7 +13,9 @@ parser.add_argument('model_name', type=str, help="Name of the model to use (e.g.
 args = parser.parse_args()
 MODEL_NAME = args.model_name
 
-results_dir = f"results/{MODEL_NAME}/norms/"
+lang_type = "monolingual" if MODEL_NAME in LANGUAGE["monolingual"] else "multilingual"
+results_dir = f"results/{lang_type}/{MODEL_NAME}/norms/"
+
 if not os.path.exists(results_dir):
     os.makedirs(results_dir)
 

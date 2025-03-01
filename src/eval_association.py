@@ -1,6 +1,6 @@
 import pandas as pd
 import argparse
-from utils import SUPPORTED_MODELS, PURPLE, PALLETE, ENTITY_PALLETE, compute_seat_weat, compute_same, normalize_embedding
+from utils import LANGUAGE, PURPLE, PALLETE, ENTITY_PALLETE, compute_seat_weat, compute_same, normalize_embedding
 import os 
 import json
 import matplotlib.pyplot as plt
@@ -12,7 +12,9 @@ parser.add_argument('model_name', type=str, help="Name of the model to use (e.g.
 args = parser.parse_args()
 MODEL_NAME = args.model_name
 
-results_dir = f"results/{MODEL_NAME}/association/"
+lang_type = "monolingual" if MODEL_NAME in LANGUAGE["monolingual"] else "multilingual"
+results_dir = f"results/{lang_type}/{MODEL_NAME}/association/"
+
 if not os.path.exists(results_dir):
     os.makedirs(results_dir)
 
