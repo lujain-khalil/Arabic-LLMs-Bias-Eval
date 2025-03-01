@@ -1,0 +1,35 @@
+{
+    "normality_tests": {
+        "Arab": {
+            "shapiro_wilk": {
+                "statistic": 0.7252808809280396,
+                "p_value": 6.5113664314898086e-18,
+                "normal": false
+            },
+            "kolmogorov_smirnov": {
+                "statistic": 1.0,
+                "p_value": 0.0,
+                "normal": false
+            }
+        },
+        "Western": {
+            "shapiro_wilk": {
+                "statistic": 0.6686161756515503,
+                "p_value": 1.417208284993161e-19,
+                "normal": false
+            },
+            "kolmogorov_smirnov": {
+                "statistic": 1.0,
+                "p_value": 0.0,
+                "normal": false
+            }
+        }
+    },
+    "statistical_tests": {
+        "mann_whitney_u": {
+            "statistic": 22511.0,
+            "p_value": 0.029897382848585428,
+            "significant": true
+        }
+    }
+}

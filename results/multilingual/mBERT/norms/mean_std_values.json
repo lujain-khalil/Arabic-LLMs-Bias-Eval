@@ -1,0 +1,134 @@
+{
+    "mean_std_values": {
+        "Arab": {
+            "mean": 10.189923286437988,
+            "std": 0.8991228342056274
+        },
+        "Western": {
+            "mean": 10.626187324523926,
+            "std": 0.9927974939346313
+        }
+    },
+    "culture_entity_stats": [
+        {
+            "culture": "Arab",
+            "entity": "authors",
+            "mean": 9.909455299377441,
+            "std": 0.5293569583435331
+        },
+        {
+            "culture": "Arab",
+            "entity": "beverage",
+            "mean": 10.504278182983398,
+            "std": 1.5198134729571167
+        },
+        {
+            "culture": "Arab",
+            "entity": "clothing-female",
+            "mean": 9.936153411865234,
+            "std": 0.4929561894180771
+        },
+        {
+            "culture": "Arab",
+            "entity": "clothing-male",
+            "mean": 9.97693157196045,
+            "std": 0.40358237949246556
+        },
+        {
+            "culture": "Arab",
+            "entity": "food",
+            "mean": 9.696514129638672,
+            "std": 0.5847072025400505
+        },
+        {
+            "culture": "Arab",
+            "entity": "location",
+            "mean": 10.120062828063965,
+            "std": 0.6489992631046961
+        },
+        {
+            "culture": "Arab",
+            "entity": "names-female",
+            "mean": 10.172802925109863,
+            "std": 0.9078137624663801
+        },
+        {
+            "culture": "Arab",
+            "entity": "names-male",
+            "mean": 9.90058708190918,
+            "std": 0.6157541650801599
+        },
+        {
+            "culture": "Arab",
+            "entity": "religious places",
+            "mean": 11.023566246032715,
+            "std": 0.9432931107226847
+        },
+        {
+            "culture": "Arab",
+            "entity": "sports clubs",
+            "mean": 10.658878326416016,
+            "std": 1.02096876391173
+        },
+        {
+            "culture": "Western",
+            "entity": "authors",
+            "mean": 10.252256393432617,
+            "std": 0.6140498176917785
+        },
+        {
+            "culture": "Western",
+            "entity": "beverage",
+            "mean": 10.322206497192383,
+            "std": 0.7988386314838178
+        },
+        {
+            "culture": "Western",
+            "entity": "clothing-female",
+            "mean": 10.234743118286133,
+            "std": 0.5541617157522346
+        },
+        {
+            "culture": "Western",
+            "entity": "clothing-male",
+            "mean": 10.06750202178955,
+            "std": 0.59164937234873
+        },
+        {
+            "culture": "Western",
+            "entity": "food",
+            "mean": 10.502395629882812,
+            "std": 1.1898043055227605
+        },
+        {
+            "culture": "Western",
+            "entity": "location",
+            "mean": 11.448542594909668,
+            "std": 1.2957463746604483
+        },
+        {
+            "culture": "Western",
+            "entity": "names-female",
+            "mean": 10.618806838989258,
+            "std": 0.9888203180818137
+        },
+        {
+            "culture": "Western",
+            "entity": "names-male",
+            "mean": 10.623464584350586,
+            "std": 0.9430641504379245
+        },
+        {
+            "culture": "Western",
+            "entity": "religious places",
+            "mean": 11.623486518859863,
+            "std": 0.6381260912572747
+        },
+        {
+            "culture": "Western",
+            "entity": "sports clubs",
+            "mean": 10.568471908569336,
+            "std": 0.9061641158420821
+        }
+    ]
+}

@@ -28,7 +28,8 @@ def bar_plot(data, score, y_lim=None):
 
     ax.set_title(f"{score} for Cultural Terms Across Models", fontsize=16)
     ax.set_ylabel(f"{score} Score", fontsize=14)
-    
+    ax.set_xlabel("Model", fontsize=14)
+
     for container in ax.containers:
         ax.bar_label(container, fmt='%.3f', padding=3)
     
@@ -70,7 +71,9 @@ def grouped_bar_plot(data, target, y_lim=None):
 
     plt.title(f"SAME for Cultural {target} Across Models", fontsize=16)
     plt.ylabel("SAME Score", fontsize=14)
-
+    plt.xlabel("Model", fontsize=14)
+    plt.legend(title='Culture', fontsize=12, title_fontsize=14)
+    
     monolingual_count = MODEL_COUNT/2
     barplot.axvline(x=monolingual_count - 0.5, color='grey', linestyle='--', linewidth=1)
 

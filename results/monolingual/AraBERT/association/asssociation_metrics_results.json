@@ -1,0 +1,244 @@
+{
+    "WEAT": {
+        "Score": 0.099031365733221,
+        "Mean Arab (M)": -0.008009664370678364,
+        "Std Arab (M)": 0.008676394106813387,
+        "Mean Western (F)": -0.008889212286099795,
+        "Std Western (F)": 0.009081991597555848
+    },
+    "WEAT for authors": {
+        "Score": -0.12273971136815412,
+        "Mean Arab (M)": -0.0031356190890073797,
+        "Std Arab (M)": 0.009444097579968929,
+        "Mean Western (F)": -0.002064982242882249,
+        "Std Western (F)": 0.007936266290489165
+    },
+    "WEAT for beverage": {
+        "Score": -0.49333677587938185,
+        "Mean Arab (M)": -0.010222000069916243,
+        "Std Arab (M)": 0.00614400324574666,
+        "Mean Western (F)": -0.0057068007811904185,
+        "Std Western (F)": 0.011392228582202986
+    },
+    "WEAT for clothing-female": {
+        "Score": -0.5911592696759973,
+        "Mean Arab (M)": -0.014105490613728783,
+        "Std Arab (M)": 0.005026492451094175,
+        "Mean Western (F)": -0.00986075712367892,
+        "Std Western (F)": 0.008823229170813652
+    },
+    "WEAT for clothing-male": {
+        "Score": -0.6210761916832556,
+        "Mean Arab (M)": -0.015187436752021282,
+        "Std Arab (M)": 0.005796055871461819,
+        "Mean Western (F)": -0.010625522248446938,
+        "Std Western (F)": 0.008620265892882199
+    },
+    "WEAT for food": {
+        "Score": -0.4054246915183874,
+        "Mean Arab (M)": -0.012651695460081097,
+        "Std Arab (M)": 0.007154134922958782,
+        "Mean Western (F)": -0.009585053566843272,
+        "Std Western (F)": 0.00795281437322493
+    },
+    "WEAT for location": {
+        "Score": 0.21434943136951834,
+        "Mean Arab (M)": -0.006199773885309673,
+        "Std Arab (M)": 0.007118626327346427,
+        "Mean Western (F)": -0.007877761162817482,
+        "Std Western (F)": 0.008478742932370683
+    },
+    "WEAT for names-female": {
+        "Score": 0.8472041867845245,
+        "Mean Arab (M)": -0.0010078056715428884,
+        "Std Arab (M)": 0.009373843164907546,
+        "Mean Western (F)": -0.00849814660847189,
+        "Std Western (F)": 0.008274438887166715
+    },
+    "WEAT for names-male": {
+        "Score": 0.6496961954889927,
+        "Mean Arab (M)": -0.0060554376058280625,
+        "Std Arab (M)": 0.007162396453968566,
+        "Mean Western (F)": -0.010817366018891338,
+        "Std Western (F)": 0.0074928180087831696
+    },
+    "WEAT for religious places": {
+        "Score": 1.1593252871971553,
+        "Mean Arab (M)": -0.00531296947039663,
+        "Std Arab (M)": 0.008146513104818067,
+        "Mean Western (F)": -0.013552967179566614,
+        "Std Western (F)": 0.005888100120130485
+    },
+    "WEAT for sports clubs": {
+        "Score": 0.47188843462777835,
+        "Mean Arab (M)": -0.006218415088951601,
+        "Std Arab (M)": 0.007357125701998662,
+        "Mean Western (F)": -0.01030276592820884,
+        "Std Western (F)": 0.00978275158809797
+    },
+    "SEAT": {
+        "Score": 0.06398441652739155,
+        "Mean Arab (M)": -0.0118746188422665,
+        "Std Arab (M)": 0.006581183314546048,
+        "Mean Western (F)": -0.012295248709758743,
+        "Std Western (F)": 0.006566693461782469
+    },
+    "SEAT for authors": {
+        "Score": -0.051183680825006364,
+        "Mean Arab (M)": -0.00757339710183442,
+        "Std Arab (M)": 0.007040391126442198,
+        "Mean Western (F)": -0.007203375047538429,
+        "Std Western (F)": 0.00741339170741807
+    },
+    "SEAT for beverage": {
+        "Score": 0.08127785286522747,
+        "Mean Arab (M)": -0.016102088915184144,
+        "Std Arab (M)": 0.0036508948251479864,
+        "Mean Western (F)": -0.01643741342052817,
+        "Std Western (F)": 0.004551159277681932
+    },
+    "SEAT for clothing-female": {
+        "Score": -0.013044739679392486,
+        "Mean Arab (M)": -0.016372538906522096,
+        "Std Arab (M)": 0.0022649528240132185,
+        "Mean Western (F)": -0.016345289287157356,
+        "Std Western (F)": 0.0018966527013669153
+    },
+    "SEAT for clothing-male": {
+        "Score": -0.020363234258937844,
+        "Mean Arab (M)": -0.014078076764009892,
+        "Std Arab (M)": 0.00399817101772284,
+        "Mean Western (F)": -0.013998820004984737,
+        "Std Western (F)": 0.0037831586425542143
+    },
+    "SEAT for food": {
+        "Score": -0.06326877753717469,
+        "Mean Arab (M)": -0.016397794233635066,
+        "Std Arab (M)": 0.004554700893052009,
+        "Mean Western (F)": -0.01609150901250541,
+        "Std Western (F)": 0.005111319690151186
+    },
+    "SEAT for location": {
+        "Score": 0.03034877725187359,
+        "Mean Arab (M)": -0.010439152019098402,
+        "Std Arab (M)": 0.0028737286163228806,
+        "Mean Western (F)": -0.010532951522618534,
+        "Std Western (F)": 0.0032934413374638895
+    },
+    "SEAT for names-female": {
+        "Score": 0.06316554188145157,
+        "Mean Arab (M)": -0.009010541025549176,
+        "Std Arab (M)": 0.007757755025017031,
+        "Mean Western (F)": -0.009497814909555018,
+        "Std Western (F)": 0.007670469652007921
+    },
+    "SEAT for names-male": {
+        "Score": 0.10840084293877633,
+        "Mean Arab (M)": -0.009664195485413071,
+        "Std Arab (M)": 0.00935199158530221,
+        "Mean Western (F)": -0.010684022553265095,
+        "Std Western (F)": 0.009463529069481794
+    },
+    "SEAT for religious places": {
+        "Score": 0.4294071011528905,
+        "Mean Arab (M)": -0.0066454083882272206,
+        "Std Arab (M)": 0.005184295194826777,
+        "Mean Western (F)": -0.008802593218162654,
+        "Std Western (F)": 0.004857665489254067
+    },
+    "SEAT for sports clubs": {
+        "Score": 0.18709484500778373,
+        "Mean Arab (M)": -0.01246299558319151,
+        "Std Arab (M)": 0.004563685588373552,
+        "Mean Western (F)": -0.013358698121272026,
+        "Std Western (F)": 0.005001164872604518
+    },
+    "SAME-terms": {
+        "Arab": 0.007643724514055066,
+        "Western": 0.007919112372910604
+    },
+    "SAME-sentences": {
+        "Arab": 0.010167157004296315,
+        "Western": 0.010557903314591385
+    },
+    "SAME for authors terms": {
+        "Arab": 0.009586466243490577,
+        "Western": 0.008036729251034557
+    },
+    "SAME for beverage terms": {
+        "Arab": 0.005946794094052165,
+        "Western": 0.009670179162640125
+    },
+    "SAME for clothing-female terms": {
+        "Arab": 0.006955434067640454,
+        "Western": 0.006847096187993884
+    },
+    "SAME for clothing-male terms": {
+        "Arab": 0.008226777147501706,
+        "Western": 0.006647851038724184
+    },
+    "SAME for food terms": {
+        "Arab": 0.008175959018990398,
+        "Western": 0.007347571745049209
+    },
+    "SAME for location terms": {
+        "Arab": 0.006083753687562421,
+        "Western": 0.008297066914383321
+    },
+    "SAME for names-female terms": {
+        "Arab": 0.011018931353464722,
+        "Western": 0.0075162613531574605
+    },
+    "SAME for names-male terms": {
+        "Arab": 0.0067083363130223,
+        "Western": 0.006396731024142355
+    },
+    "SAME for religious places terms": {
+        "Arab": 0.007107596326386556,
+        "Western": 0.009484650194644928
+    },
+    "SAME for sports clubs terms": {
+        "Arab": 0.006627196888439357,
+        "Western": 0.008946986857336015
+    },
+    "SAME for authors sentences": {
+        "Arab": 0.009586466243490577,
+        "Western": 0.008036729251034557
+    },
+    "SAME for beverage sentences": {
+        "Arab": 0.005946794094052165,
+        "Western": 0.009670179162640125
+    },
+    "SAME for clothing-female sentences": {
+        "Arab": 0.006955434067640454,
+        "Western": 0.006847096187993884
+    },
+    "SAME for clothing-male sentences": {
+        "Arab": 0.008226777147501706,
+        "Western": 0.006647851038724184
+    },
+    "SAME for food sentences": {
+        "Arab": 0.008175959018990398,
+        "Western": 0.007347571745049209
+    },
+    "SAME for location sentences": {
+        "Arab": 0.006083753687562421,
+        "Western": 0.008297066914383321
+    },
+    "SAME for names-female sentences": {
+        "Arab": 0.011018931353464722,
+        "Western": 0.0075162613531574605
+    },
+    "SAME for names-male sentences": {
+        "Arab": 0.0067083363130223,
+        "Western": 0.006396731024142355
+    },
+    "SAME for religious places sentences": {
+        "Arab": 0.007107596326386556,
+        "Western": 0.009484650194644928
+    },
+    "SAME for sports clubs sentences": {
+        "Arab": 0.006627196888439357,
+        "Western": 0.008946986857336015
+    }
+}
