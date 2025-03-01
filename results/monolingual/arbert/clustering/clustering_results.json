@@ -1,7 +1,7 @@
 {
     "Silhouette Score (K-Means)": 0.0860576331615448,
-    "Intra-Cluster Distance (Culture)": 23.887619582357598,
-    "Inter-Cluster Distance (Culture)": 24.61522475630229,
-    "Intra-Cluster Distance (Culture-Entity)": 19.984241199094946,
-    "Inter-Cluster Distance (Culture-Entity)": 24.476010641447576
+    "Intra-Cluster Distance (Culture)": 23.887619553740027,
+    "Inter-Cluster Distance (Culture)": 24.61522473593787,
+    "Intra-Cluster Distance (Culture-Entity)": 19.984241033818407,
+    "Inter-Cluster Distance (Culture-Entity)": 24.476010624366346
 }

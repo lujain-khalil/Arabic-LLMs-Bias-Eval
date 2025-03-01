@@ -22,7 +22,7 @@ results_dir = f"results/{lang_type}/{MODEL_NAME}/clustering/"
 if not os.path.exists(results_dir):
     os.makedirs(results_dir)
 
-eps_dir = f"results/{MODEL_NAME}/association/eps"
+eps_dir = f"results/{lang_type}/{MODEL_NAME}/clustering/eps/"
 if not os.path.exists(eps_dir):
     os.makedirs(eps_dir)
 

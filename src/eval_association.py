@@ -18,7 +18,7 @@ results_dir = f"results/{lang_type}/{MODEL_NAME}/association/"
 if not os.path.exists(results_dir):
     os.makedirs(results_dir)
 
-eps_dir = f"results/{MODEL_NAME}/association/eps"
+eps_dir = f"results/{lang_type}/{MODEL_NAME}/association/eps/"
 if not os.path.exists(eps_dir):
     os.makedirs(eps_dir)
 
@@ -91,7 +91,6 @@ def bar_plot(data, score):
     
     ax.set_title(f"{score} for Cultural Terms ({MODEL_NAME})", fontsize=16)
     ax.set_ylabel(f"{score} Score", fontsize=14)
-    ax.legend(title="Category", fontsize=12, title_fontsize=14)
     
     for container in ax.containers:
         ax.bar_label(container, fmt='%.3f', padding=3)
@@ -106,13 +105,13 @@ def grouped_bar_plot(data, target):
     for term_category, cultures in data.items():
         for culture, score in cultures.items():
             tidy_data.append({
-                "entity": 'SAME' if term_category == f'SAME-{target.lower()}' else term_category.replace("SAME for ", "").replace(" terms", ""),
+                "Entity": 'Total' if term_category == f'SAME-{target.lower()}' else term_category.replace("SAME for ", "").replace(" terms", ""),
                 "SAME": score,
-                "culture": culture
+                "Culture": culture
             })
 
     plt.figure(figsize=(15, 6))
-    barplot = sns.barplot(data=pd.DataFrame(tidy_data), x='entity', y='SAME', hue='culture', palette=PALLETE)
+    barplot = sns.barplot(data=pd.DataFrame(tidy_data), x='Entity', y='SAME', hue='Culture', palette=PALLETE)
 
     for container in barplot.containers:
         barplot.bar_label(container, fmt='%.3f', padding=3)
