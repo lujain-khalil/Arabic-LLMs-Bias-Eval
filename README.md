@@ -12,10 +12,11 @@ We also include the paper results, as generated through the code. A small tutori
 
 ## How to use our code:
 
-1. To extract embeddings from a specific model, run ``python src/extract_embeddings.py model_name``
-2. To run all evaluation scripts for a specific model, run ``python main.py model_name``
-3. To run a specific evaluation script (``eval_clustering.py``, ``eval_norms.py``, or ``eval_association.py``), run ``python src/eval_clustering.py model_name``
-4. To compare association scores across models, run ``python src/model_comparision.py``
+1. To extract embeddings from a specific model, run ``python src/extract_embeddings.py <model_name>``
+2. To run all evaluation scripts for a specific model, run ``python main.py <model_name>``
+3. To run all evaluation scripts for all models specified in `SUPPORTED_MODELS`, run ``python main.py all``
+4. To run a specific evaluation script (``eval_clustering.py``, ``eval_norms.py``, or ``eval_association.py``), run ``python <script> <model_name>``
+5. To compare association scores across models, run ``python src/model_comparision.py``
 
 Note: The models that are currently supported are as follows:
 
@@ -41,7 +42,7 @@ To extend the framework to more models, change the ``SUPPORTED_MODELS`` variable
 
 ## Sample of results
 
-If you run the above code for any of the models, you will get the following figures generated once. In the below example, we will be working with ``marbert``. The code to do this would be ``python main.py marbert``
+If you run the above code for any of the models, you will get the following figures generated once. In the below example, we will be working with ``MARBERT``. The code to do this would be ``python main.py marbert``
 
 ### Association Results for MARBERT
 
