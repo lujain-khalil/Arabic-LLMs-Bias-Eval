@@ -82,12 +82,17 @@ def scatter_plot(df, column, save_path, eps_dir, palette = 'flare'):
         legend=False
     )
     cluster_centroids = df.groupby(column)[['t-SNE 1', 't-SNE 2']].mean()
+    cluster_label_size = {
+        'Culture': 16,
+        'Entity': 14,
+        'Culture-Entity': 12
+    }
     for cluster_name, (x, y) in cluster_centroids.iterrows():
         plt.text(
             x, y, str(cluster_name),
             horizontalalignment='center',
             verticalalignment='center',
-            # fontsize=12,
+            fontsize=cluster_label_size[column],
             color='black',
             bbox=dict(facecolor='white', edgecolor='black', boxstyle='round,pad=0.3')
         )

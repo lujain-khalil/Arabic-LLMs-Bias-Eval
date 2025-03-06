@@ -24,16 +24,17 @@ def bar_plot(data, score, y_lim=None):
     ax = sns.barplot(x='Model', y='Score', data=df, hue='Model')
     
     if y_lim is not None:
-        headroom = (y_lim[1] - y_lim[0]) * 0.05
+        headroom = (y_lim[1] - y_lim[0]) * 0.07
         ax.set_ylim(y_lim[0] - headroom, y_lim[1] + headroom)
 
     ax.set_title(f"{score} for Cultural Terms Across Models", fontsize=20)
-    ax.set_ylabel(f"{score} Score", fontsize=14)
+    ax.set_ylabel(f"{score} Score", fontsize=16)
     ax.set_xlabel("", fontsize=1)
 
     for container in ax.containers:
         ax.bar_label(container, fmt='%.3f', padding=3)
-    plt.setp(ax.get_xticklabels(), rotation=45)
+    plt.setp(ax.get_xticklabels(), rotation=45, fontsize=14)
+    plt.setp(ax.get_yticklabels(), fontsize=14)
 
     monolingual_count = MODEL_COUNT/2
     ax.axvline(x=monolingual_count - 0.5, color='grey', linestyle='--', linewidth=1)
@@ -62,16 +63,15 @@ def grouped_bar_plot(data, target, y_lim=None):
     barplot = sns.barplot(data=pd.DataFrame(tidy_data), x='Model', y='SAME', hue='Culture', palette=PALLETE)
 
     if y_lim is not None:
-        headroom = (y_lim[1] - y_lim[0]) * 0.05
+        headroom = (y_lim[1] - y_lim[0]) * 0.07
         plt.ylim(y_lim[0], y_lim[1] + headroom)
 
     for container in barplot.containers:
         barplot.bar_label(container, fmt='%.3f', padding=3)
-    plt.setp(barplot.get_xticklabels(), rotation=45)
+    plt.setp(barplot.get_xticklabels(), rotation=45, fontsize=14)
+    plt.setp(barplot.get_yticklabels(), fontsize=14)
 
-    leg = barplot.get_legend()
-    leg.set_title("Culture")
-
+    plt.legend(title="Culture", fontsize=12, title_fontsize=14)
     plt.title(f"SAME for Cultural {target} Across Models", fontsize=20)
     plt.ylabel("SAME Score", fontsize=14)
     plt.xlabel("", fontsize=1)
