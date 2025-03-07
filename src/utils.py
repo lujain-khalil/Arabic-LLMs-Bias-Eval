@@ -64,6 +64,19 @@ CULTURE_ENTITY_PALLETE = {
     "Western-sports clubs": "#0d7a86"   # Darker Cyan
 }
 
+BASE_ENTITY_FILES = {
+        "authors": "authors.xlsx",
+        "beverage": "beverage.xlsx",
+        "clothing-female": "clothing-female.xlsx",
+        "clothing-male": "clothing-male.xlsx",
+        "food": "food.xlsx",
+        "location": "locations.xlsx",
+        "names-female": "names-female.xlsx",
+        "names-male": "names-male.xlsx",
+        "religious places": "religious-places.xlsx",
+        "sports clubs": "sports-clubs.xlsx"
+    }
+
 # Embedding Function
 def get_embedding(sentence, model_name):
     if model_name not in SUPPORTED_MODELS:
