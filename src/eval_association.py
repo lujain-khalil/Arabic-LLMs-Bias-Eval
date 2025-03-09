@@ -1,10 +1,8 @@
 import pandas as pd
 import argparse
-from utils import LANGUAGE, PURPLE, PALLETE, ENTITY_PALLETE, compute_seat_weat, compute_same, normalize_embedding
+from utils import LANGUAGE, PALLETE, WEAT_SEAT_PALLETE, compute_seat_weat, compute_same, normalize_embedding, grouped_barplot, process_same_data, process_seat_weat_data
 import os 
 import json
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 parser = argparse.ArgumentParser(description="Evaluate embeddings using a specified multilingual masked LLM.")
 parser.add_argument('model_name', type=str, help="Name of the model to use (e.g., 'xlm-roberta-base', 'mbert', 'gigabert')")
@@ -80,96 +78,19 @@ with open(f"{results_dir}asssociation_metrics_results.json", 'w') as f:
     json.dump(combined_results, f, indent=4)
 
 # ------------ Generating plots ------------
-FIG_SIZE = (12, 6)
-def bar_plot(data, score, y_lim=None):
-    df = pd.DataFrame({'Category': data.keys(), 'Score': data.values()})
-    
-    plt.figure(figsize=FIG_SIZE)
-    temp_pallete = ENTITY_PALLETE
-    temp_pallete[f'Total {score}'] = PURPLE
-    ax = sns.barplot(x='Category', y='Score', data=df, hue='Category', palette=temp_pallete)
-    
-    if y_lim is not None:
-        headroom = (y_lim[1] - y_lim[0]) * 0.07
-        ax.set_ylim(y_lim[0] - headroom, y_lim[1] + headroom)
-
-    ax.set_title(f"{score} for Cultural Terms ({MODEL_NAME})", fontsize=20)
-    ax.set_ylabel(f"{score} Score", fontsize=16)
-    ax.set_xlabel("", fontsize=1)
-
-    for container in ax.containers:
-        ax.bar_label(container, fmt='%.3f', padding=3)
-    plt.setp(ax.get_xticklabels(), rotation=45, fontsize=14)
-    plt.setp(ax.get_yticklabels(), fontsize=14)
-
-    plt.tight_layout()
-    plt.savefig(f"{results_dir}{score.lower()}_scores.png")
-    eps_path = os.path.join(eps_dir, f"{score.lower()}_scores.eps")
-    plt.savefig(eps_path, format='eps')
-
-def grouped_bar_plot(data, target, y_lim=None):  
-    tidy_data = []
-    for term_category, cultures in data.items():
-        for culture, score in cultures.items():
-            tidy_data.append({
-                "Entity": 'Total SAME' if term_category == f'SAME-{target.lower()}' else term_category.replace("SAME for ", "").replace(" terms", ""),
-                "SAME": score,
-                "Culture": culture
-            })
-
-    plt.figure(figsize=FIG_SIZE)
-    barplot = sns.barplot(data=pd.DataFrame(tidy_data), x='Entity', y='SAME', hue='Culture', palette=PALLETE)
-
-    if y_lim is not None:
-        headroom = (y_lim[1] - y_lim[0]) * 0.07
-        plt.ylim(y_lim[0], y_lim[1] + headroom)
-    
-    for container in barplot.containers:
-        barplot.bar_label(container, fmt='%.3f', padding=3)
-    plt.setp(barplot.get_xticklabels(), rotation=45, fontsize=14)
-    plt.setp(barplot.get_yticklabels(), fontsize=14)
-
-    plt.title(f"SAME for Cultural {target} ({MODEL_NAME})", fontsize=20)
-    plt.ylabel("SAME Score", fontsize=16)
-    plt.xlabel("", fontsize=1)
-    
-    plt.legend(title="Culture", fontsize=12, title_fontsize=14)
-    plt.tight_layout()
-    plt.savefig(f"{results_dir}same_{target.lower()}.png")
-    eps_path = os.path.join(eps_dir, f"same_{target.lower()}.eps")
-    plt.savefig(eps_path, format='eps')
-
 print(f"Genrating plots...")
 
-# 1. WEAT for cultural terms
-weat_data = {
-    entity: combined_results[f"WEAT for {entity}"]["Score"]
-    for entity in culture_embeddings['entity'].unique()}
-weat_data['Total WEAT'] = combined_results["WEAT"]["Score"]
-
-# 2. SEAT for cultural sentences
-seat_data = {
-    entity: combined_results[f"SEAT for {entity}"]["Score"]
-    for entity in sentence_embeddings['entity'].unique()}
-seat_data['Total SEAT'] = combined_results["SEAT"]["Score"]
-
-# 3. SAME for cultural terms
+# SAME for cultural terms
 same_terms_data = {
     entity: combined_results[f"SAME for {entity} terms"]
     for entity in culture_embeddings['entity'].unique()}
 same_terms_data['SAME-terms'] = combined_results["SAME-terms"]
 
-# 4. SAME for cultural sentences
+# SAME for cultural sentences
 same_sentences_data = {
     entity: combined_results[f"SAME for {entity} sentences"]
     for entity in sentence_embeddings['entity'].unique()}
 same_sentences_data['SAME-sentences'] = combined_results["SAME-sentences"]
-
-# Compute global y-limits for WEAT and SEAT plots
-weat_values = list(weat_data.values())
-seat_values = list(seat_data.values())
-global_weat_seat_min = min(min(weat_values), min(seat_values))
-global_weat_seat_max = max(max(weat_values), max(seat_values))
 
 # Compute global y-limits for SAME plots
 same_terms_values = [score for subdict in same_terms_data.values() for score in subdict.values()]
@@ -177,10 +98,50 @@ same_sentences_values = [score for subdict in same_sentences_data.values() for s
 global_same_min = min(min(same_terms_values), min(same_sentences_values))
 global_same_max = max(max(same_terms_values), max(same_sentences_values))
 
-bar_plot(weat_data, "WEAT", y_lim=(global_weat_seat_min, global_weat_seat_max))
-bar_plot(seat_data, "SEAT", y_lim=(global_weat_seat_min, global_weat_seat_max))
+entities_seat_weat, seat_weat_data_processed, global_weat_seat_max, global_weat_seat_min = process_seat_weat_data(combined_results, 
+                                                                                                                  culture_embeddings, 
+                                                                                                                  sentence_embeddings)
 
-grouped_bar_plot(same_terms_data, "Terms", y_lim=(global_same_min, global_same_max))
-grouped_bar_plot(same_sentences_data, "Sentences", y_lim=(global_same_min, global_same_max))
+entities_terms, same_terms_data_processed = process_same_data(same_terms_data, "terms")
+entities_sentences, same_sentences_data_processed = process_same_data(same_sentences_data, "sentences")
+
+grouped_barplot(
+    group_names=entities_seat_weat,
+    scenario_data=seat_weat_data_processed,
+    title=f"WEAT and SEAT Scores by Entity ({MODEL_NAME})",
+    ylabel="Score",
+    hline=None,
+    vline=False,
+    colors=WEAT_SEAT_PALLETE,
+    ylim=[global_weat_seat_min, global_weat_seat_max],
+    output_png=os.path.join(results_dir, "weat_seat_scores.png"),
+    output_eps=os.path.join(eps_dir, "weat_seat_scores.eps")
+)
+
+grouped_barplot(
+    group_names=entities_terms,
+    scenario_data=same_terms_data_processed,
+    title=f"SAME for Cultural Terms ({MODEL_NAME})",
+    ylabel="SAME Score",
+    hline=None,
+    vline=False,
+    colors=PALLETE,
+    ylim=[global_same_min, global_same_max],
+    output_png=os.path.join(results_dir, "same_terms.png"),
+    output_eps=os.path.join(eps_dir, "same_terms.eps")
+)
+
+grouped_barplot(
+    group_names=entities_sentences,
+    scenario_data=same_sentences_data_processed,
+    title=f"SAME for Cultural Sentences ({MODEL_NAME})",
+    ylabel="SAME Score",
+    hline=None,
+    vline=False,
+    colors=PALLETE,
+    ylim=[global_same_min, global_same_max],
+    output_png=os.path.join(results_dir, "same_sentences.png"),
+    output_eps=os.path.join(eps_dir, "same_sentences.eps")
+)
 
 print(f"WEAT, SEAT, and SAME results saved in '{results_dir}asssociation_metrics_results.json'")

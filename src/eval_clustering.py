@@ -97,11 +97,9 @@ def scatter_plot(df, column, save_path, eps_dir, palette = 'flare'):
             bbox=dict(facecolor='white', edgecolor='black', boxstyle='round,pad=0.3')
         )
     plt.title(f't-SNE by {column} ({MODEL_NAME})', fontsize=18)
-    plt.xlabel("t-SNE 1", fontsize=14)
-    plt.ylabel("t-SNE 2", fontsize=14)
+    plt.xlabel("", fontsize=1)
+    plt.ylabel("", fontsize=1)
 
-    # plt.legend(title=column, bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0., fontsize=12, title_fontsize=14)
-    # plt.legend(title=column, loc='upper right', fontsize=12, title_fontsize=14)
     plt.tight_layout()
     plt.savefig(save_path)
     eps_filename = os.path.join(eps_dir, os.path.basename(save_path).replace('.png', '.eps'))
