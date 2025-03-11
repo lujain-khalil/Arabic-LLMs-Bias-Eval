@@ -28,8 +28,8 @@ def main():
     for m in model_names:
         commands = [
             f"python src/eval_norms.py {m}",
-            f"python src/eval_association.py {m}",
-            f"python src/eval_clustering.py {m}"
+            # f"python src/eval_association.py {m}",
+            # f"python src/eval_clustering.py {m}"
         ]
         for cmd in commands:
             run(cmd)
