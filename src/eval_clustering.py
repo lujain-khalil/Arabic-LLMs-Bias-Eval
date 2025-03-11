@@ -99,6 +99,8 @@ def scatter_plot(df, column, save_path, eps_dir, palette = 'flare'):
     plt.title(f't-SNE by {column} ({MODEL_NAME})', fontsize=18)
     plt.xlabel("", fontsize=1)
     plt.ylabel("", fontsize=1)
+    plt.xticks(fontsize=14)
+    plt.yticks(fontsize=14)
 
     plt.tight_layout()
     plt.savefig(save_path)
