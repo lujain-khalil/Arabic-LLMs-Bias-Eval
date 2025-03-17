@@ -12,11 +12,30 @@ We also include the paper results, as generated through the code. A small tutori
 
 ## How to use our code:
 
-1. To extract embeddings from a specific model, run ``python src/extract_embeddings.py <model_name>``
-3. To run all evaluation scripts for a specific model, run ``python main.py <model_name>``
-4. To run all evaluation scripts for all models specified in `SUPPORTED_MODELS`, run ``python main.py all``
-5. To run a specific evaluation script (``eval_clustering.py``, ``eval_norms.py``, or ``eval_association.py``), run ``python <script> <model_name>``
-6. To compare association scores across models, run ``python src/model_comparision.py``
+1. To extract embeddings from a specific model, run:
+   ```cmd
+   python src/extract_embeddings.py <model_name>
+   ```
+3. To run all evaluation scripts for a specific model, run:
+   ```cmd
+   python main.py <model_name>
+   ```
+5. To run all evaluation scripts for all models specified in `SUPPORTED_MODELS` (see `utils.py`), run:
+   ```cmd
+   python main.py all
+   ```
+7. To run a specific evaluation script (``eval_clustering.py``, ``eval_norms.py``, or ``eval_association.py``), run:
+   ```cmd
+   python <script> <model_name>
+   ```
+9. To compare association scores across models, run:
+    ```cmd
+   python src/model_comparision.py
+    ```
+11. To perform the text-infilling experiments, run:
+    ```cmd
+    python src/comparision_text_infilling.py
+    ```
 
 Note: The models that are currently supported are as follows:
 
@@ -50,20 +69,19 @@ If you run the above code for any of the supported models, you will get the foll
 | :--------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------: |
 |                                                   SAME score for sentences                                                   |                                                   SAME score for terms                                                   |
 
-| ![Image 4](https://github.com/lujain-khalil/Arabic-LLMs-Bias-Eval/blob/main/results/monolingual/MARBERT/association/seat_scores.png) | ![Image 6](https://github.com/lujain-khalil/Arabic-LLMs-Bias-Eval/blob/main/results/monolingual/MARBERT/association/weat_scores.png) |
-| :-----------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------: |
-|                                                        SEAT scores                                                        |                                                        WEAT scores                                                        |
-
+| ![Image 3](https://github.com/lujain-khalil/Arabic-LLMs-Bias-Eval/blob/main/results/monolingual/MARBERT/association/weat_seat_scores.png) |
+| :-----------------------------------------------------------------------------------------------------------------------: |
+|                                                        WEAT and SEAT scores                                                        |
 ### Clustering Results for MARBERT
 
-| ![Image 2](https://github.com/lujain-khalil/Arabic-LLMs-Bias-Eval/blob/main/results/monolingual/MARBERT/clustering/tsne_plot_culture.png) | ![Image 3](https://github.com/lujain-khalil/Arabic-LLMs-Bias-Eval/blob/main/results/monolingual/MARBERT/clustering/tsne_plot_culture_entity.png) | ![Image 4](https://github.com/lujain-khalil/Arabic-LLMs-Bias-Eval/blob/main/results/monolingual/MARBERT/clustering/tsne_plot_entity.png) |
+| ![Image 4](https://github.com/lujain-khalil/Arabic-LLMs-Bias-Eval/blob/main/results/monolingual/MARBERT/clustering/tsne_plot_culture.png) | ![Image 5](https://github.com/lujain-khalil/Arabic-LLMs-Bias-Eval/blob/main/results/monolingual/MARBERT/clustering/tsne_plot_culture_entity.png) | ![Image 6](https://github.com/lujain-khalil/Arabic-LLMs-Bias-Eval/blob/main/results/monolingual/MARBERT/clustering/tsne_plot_entity.png) |
 | :----------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: |
 |                                                   tSNE plot (across cultures)                                                   |                                                   tSNE plot (across culture-entity)                                                   |                                                   tSNE plot (across entity)                                                   |
 
 
 ### Norms for MARBERT
 
-| ![Image 1](https://github.com/lujain-khalil/Arabic-LLMs-Bias-Eval/blob/main/results/monolingual/MARBERT/norms/boxplot_norms.png) | ![Image 4](https://github.com/lujain-khalil/Arabic-LLMs-Bias-Eval/blob/main/results/monolingual/MARBERT/norms/histogram_kde_norms.png) | ![Image 5](https://github.com/lujain-khalil/Arabic-LLMs-Bias-Eval/blob/main/results/monolingual/MARBERT/norms/violin_plot_norms.png) |
+| ![Image 7](https://github.com/lujain-khalil/Arabic-LLMs-Bias-Eval/blob/main/results/monolingual/MARBERT/norms/boxplot_norms.png) | ![Image 8](https://github.com/lujain-khalil/Arabic-LLMs-Bias-Eval/blob/main/results/monolingual/MARBERT/norms/histogram_kde_norms.png) | ![Image 9](https://github.com/lujain-khalil/Arabic-LLMs-Bias-Eval/blob/main/results/monolingual/MARBERT/norms/violin_plot_norms.png) |
 | :-------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------: |
 |                                                   Box-plot of norms                                                   |                                                   Distribution histogram                                                   |                                                        Violin plot                                                        |
 
